@@ -1,5 +1,7 @@
 # Full-Stack Starter
 
+Member: Ashley Sheng
+
 This repository contains a "starter" project for web application development in JavaScript.
 
 ## One-time Setup
