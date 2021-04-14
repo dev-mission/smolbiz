@@ -9,6 +9,7 @@ function Home() {
         Ashley Sheng 
       </p>
       <img src = "https://memegenerator.net/img/instances/73979818.jpg"></img>
+      <p>indeed very smol</p>
     </main>    
   );
 }
