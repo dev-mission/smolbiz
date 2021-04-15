@@ -1,19 +1,6 @@
 function Home() {
   return (
     <main className="container">
-      <h1>Home</h1>
-<<<<<<< HEAD
-      
-      <p>
-        <h2>Team members:</h2> 
-        <p>Alice Wang</p>
-        <p>Serena Chen</p>
-=======
-      <p>
-        <h2>Team members:</h2> 
-        <p>Serena Chen</p>
-      </p>
->>>>>>> main
       <h1>SmolBiz!</h1>
       <h2>Team members:</h2>
       <p>
@@ -26,5 +13,4 @@ function Home() {
     </main>    
   );
 }
-
 export default Home;
