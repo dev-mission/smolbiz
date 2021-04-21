@@ -43,6 +43,91 @@ const Api = {
     me() {
       return instance.get('/api/users/me');
     }
+  },
+  items: {
+    index() {
+      return instance.get('/api/items');
+    },
+    create(data) {
+      return instance.post('/api/items', data);
+    },
+    get(id) {
+      return instance.get(`/api/items/${id}`);
+    },
+    update(id, data) {
+      return instance.patch(`/api/items/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/items/${id}`);
+    }
+  },
+  kudos: {
+    index() {
+      return instance.get('/api/kudos');
+    },
+    create(data) {
+      return instance.post('/api/kudos', data);
+    },
+    get(id) {
+      return instance.get(`/api/kudos/${id}`);
+    },
+    update(id, data) {
+      return instance.patch(`/api/kudos/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/kudos/${id}`);
+    }
+  },
+  shoutouts: {
+    index() {
+      return instance.get('/api/shoutouts');
+    },
+    create(data) {
+      return instance.post('/api/shoutouts', data);
+    },
+    get(id) {
+      return instance.get(`/api/shoutouts/${id}`);
+    },
+    update(id, data) {
+      return instance.patch(`/api/shoutouts/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/shoutouts/${id}`);
+    }
+  },
+  ownershopphotos: {
+    index() {
+      return instance.get('/api/ownershopphotos');
+    },
+    create(data) {
+      return instance.post('/api/ownershopphotos', data);
+    },
+    get(id) {
+      return instance.get(`/api/ownershopphotos/${id}`);
+    },
+    update(id, data) {
+      return instance.patch(`/api/ownershopphotos/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/ownershopphotos/${id}`);
+    }
+  },
+  usershopphotos: {
+    index() {
+      return instance.get('/api/usershopphotos');
+    },
+    create(data) {
+      return instance.post('/api/usershopphotos', data);
+    },
+    get(id) {
+      return instance.get(`/api/usershopphotos/${id}`);
+    },
+    update(id, data) {
+      return instance.patch(`/api/usershopphotos/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/usershopphotos/${id}`);
+    }
   }
 };
 
