@@ -6,7 +6,7 @@ import {
 
 import './App.scss';
 
-import {AuthContextProvider} from './AuthContext';
+import {AuthContextProvider, AuthProtectedRoute} from './AuthContext';
 import Header from './Header';
 import Home from './Home';
 import Login from './Login';
@@ -38,9 +38,9 @@ function App() {
           <Route path= "/items">
             <Items />
           </Route>
-          <Route path= "/shops">
+          <AuthProtectedRoute path= "/shops">
             <Shops />
-          </Route>
+          </AuthProtectedRoute>
         </Switch>
       </Router>
     </AuthContextProvider>

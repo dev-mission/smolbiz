@@ -33,7 +33,7 @@ function ShopsList() {
             <ul>
                 {shops.map(s => (
                     <li key={s.id}>
-                        <p><Link to={`/shops/${s.id}/edit`}>{s.title}</Link></p>
+                        <p><Link to={`/shops/${s.id}/edit`}>{s.shopName}</Link></p>
                         <p> <button onClick={() => onDelete(s)} type="button" className="btn btn-sm btn-danger">Delete</button></p>
                     </li>
                 ))}
