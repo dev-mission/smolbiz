@@ -14,6 +14,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      middleName: {
+        type: Sequelize.STRING
+      },
       lastName: {
         allowNull: false,
         type: Sequelize.STRING
@@ -46,6 +49,15 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      photo: {
+        type: Sequelize.STRING
+      },
+      birthday: {
+        type: Sequelize.DATEONLY
+      },
+      gender: {
+        type: Sequelize.STRING
       }
     });
     await queryInterface.addIndex('Users', {
