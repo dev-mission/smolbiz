@@ -17,6 +17,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasMany(models.Item);
+      User.hasMany(models.Shop);
     }
 
     static isValidPassword(password) {
