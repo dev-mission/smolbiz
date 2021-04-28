@@ -35,9 +35,9 @@ function App() {
               <Register />
             </Route>
           )}
-          <Route path= "/items">
+          <AuthProtectedRoute path= "/items">
             <Items />
-          </Route>
+          </AuthProtectedRoute>
           <AuthProtectedRoute path= "/shops">
             <Shops />
           </AuthProtectedRoute>
