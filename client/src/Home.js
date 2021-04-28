@@ -2,15 +2,20 @@ function Home() {
   return (
     <main className="container">
       <h1>Home</h1>
+      <p>
+        <h2>Team members:</h2> 
+        <p>Serena Chen</p>
+      </p>
+      <h1>SmolBiz!</h1>
       <h2>Team members:</h2>
       <p>
         Alice Wang<br />
         Serena Chen<br />
-        Ashley Sheng
+        Ashley Sheng 
       </p>
-      <img src="https://www.rd.com/wp-content/uploads/2019/05/American-shorthair-cat-scaled.jpg"></img>
+      <img src = "https://memegenerator.net/img/instances/73979818.jpg"></img>
+      <p>indeed very smol</p>
     </main>    
   );
 }
-
 export default Home;
