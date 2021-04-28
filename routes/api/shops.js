@@ -15,11 +15,11 @@ router.get('/', async function(req, res) {
   res.json(rows);
 });
 
-router.post('/', interceptors.requireAdmin, async function(req, res) {
+router.post('/', interceptors.requireLogin, async function(req, res) {
   //build is not async (not to database, build new Skill row in memory)
   //the body is the extracted data from the request
   const row = models.Shop.build(req.body);
-  //the requireAdmin interceptor ensures that the client is logged in, and
+  //the requireLogin interceptor ensures that the client is logged in, and
   //the user object is accessible on the request object as follows
   row.UserId = req.user.id;
   //try to save this new row
