@@ -12,17 +12,29 @@ function ItemForm() {
     
     //initial value of section (in this case, obj with name, slug, and position attributes)
     const [item, setItem] = useState({
+        ShopId: '',
         title: '',
         description: '',
         price: 0
     });
+    const [shops, setShops] = useState([]);
 
     //side effects, don't directly interact with output, don't refresh when it changes
     useEffect(function(){
+        Api.shops.index().then((response) => {
+            //set the loaded shops list into the shops state
+            setShops(response.data);
+            //if there are shops, set the first into the item
+            if (response.data.length > 0) {
+                const newItem = { ...item };
+                newItem.ShopId = response.data[0].id;
+                setItem(newItem);
+            }
+        });
         if(id){
             Api.items.get(id).then((response) => setItem(response.data));
         }
-    }, []);
+    }, [id]);
 
     function onChange(event) {
 
@@ -59,6 +71,12 @@ function ItemForm() {
         <main className="container">
             <h1>item Form</h1>
             <form onSubmit={onSubmit}>
+                <div className="mb-3">
+                    <label className="form-label">Shop</label>
+                    <select className="form-control" name="ShopId">
+                        {shops.map((s) => <option value={s.id}>{s.shopName}</option>)}
+                    </select>
+                </div>
                 <div className="mb-3">
                     <label className="form-label">Title</label>
                     <input className="form-control" type="text" name="title" value={item.title} onChange={onChange} />
