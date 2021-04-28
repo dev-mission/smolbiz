@@ -1,7 +1,7 @@
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 
 import ShopsList from './ShopsList';
-import ShopsForm from './ShopForm';
+import ShopForm from './ShopForm';
 
 function Shops(){
     //from reactRouterDOM, nested Route to reference existing path
