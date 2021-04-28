@@ -26,7 +26,7 @@ function ShopForm() {
     //side effects, don't directly interact with output, don't refresh when it changes
     useEffect(function(){
         if(id){
-            Api.shops.get(id).then((response) => setItem(response.data));
+            Api.shops.get(id).then((response) => setShop(response.data));
         }
     }, []);
 
@@ -99,7 +99,8 @@ function ShopForm() {
                 </div>
                 <button className="btn btn-primary" type="submit">Submit</button>
             </form>
-            <p>{JSON.stringify(item)}</p>
+
+            <p>{JSON.stringify(shop)}</p>
         </main>
     );
 }
