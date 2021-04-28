@@ -123,6 +123,21 @@ module.exports = (sequelize, DataTypes) => {
     },
     passwordResetTokenExpiresAt: {
       type: DataTypes.DATE
+    },
+    middleName: {
+      type: DataTypes.STRING
+    },
+    username: {
+      type: DataTypes.STRING
+    },
+    photo: {
+      type: DataTypes.STRING
+    },
+    birthday: {
+      type: DataTypes.DATEONLY
+    },
+    gender: {
+      type: DataTypes.STRING
     }
   }, {
     sequelize,
