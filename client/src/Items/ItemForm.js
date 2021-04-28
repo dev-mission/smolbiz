@@ -73,7 +73,7 @@ function ItemForm() {
             <form onSubmit={onSubmit}>
                 <div className="mb-3">
                     <label className="form-label">Shop</label>
-                    <select className="form-control" name="ShopId">
+                    <select className="form-control" name="ShopId" onChange={onChange}>
                         {shops.map((s) => <option value={s.id}>{s.shopName}</option>)}
                     </select>
                 </div>
