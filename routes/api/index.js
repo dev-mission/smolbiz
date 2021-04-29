@@ -8,5 +8,6 @@ router.use('/uploads', require('./uploads'));
 router.use('/users', require('./users'));
 router.use('/items', require('./items'));
 router.use('/shops', require('./shops'));
+router.use('/kudos', require('./kudos'));
 
 module.exports = router;

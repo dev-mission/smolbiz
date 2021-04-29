@@ -14,6 +14,7 @@ import Passwords from './Passwords';
 import Register from './Register';
 import Items from './Items/Items';
 import Shops from './Shops/Shops';
+import Kudos from './Kudos/Kudos';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route path= "/shops">
             <Shops />
+          </Route>
+          <Route path= "/kudos">
+            <Kudos />
           </Route>
         </Switch>
       </Router>
