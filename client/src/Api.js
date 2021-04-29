@@ -61,6 +61,23 @@ const Api = {
       return instance.delete(`/api/items/${id}`);
     }
   },
+  badges: {
+    index() {
+      return instance.get('/api/badges');
+    },
+    create(data) {
+      return instance.post('/api/badges', data);
+    },
+    get(id) {
+      return instance.get(`/api/badges/${id}`);
+    },
+    update(id, data) {
+      return instance.patch(`/api/badges/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/badges/${id}`);
+    }
+  },
   shops: {
     index() {
       return instance.get('/api/shops');

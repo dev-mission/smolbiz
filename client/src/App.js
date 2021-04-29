@@ -14,6 +14,8 @@ import Passwords from './Passwords';
 import Register from './Register';
 import Items from './Items/Items';
 import Shops from './Shops/Shops';
+import Shoutouts from './Shoutouts/Shoutouts';
+import Badges from './Badges/Badges';
 
 function App() {
   return (
@@ -23,6 +25,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path= "/badges">
+            <Badges />
           </Route>
           <Route path="/login">
             <Login />
@@ -40,6 +45,9 @@ function App() {
           </Route>
           <Route path= "/shops">
             <Shops />
+          </Route>
+          <Route path= "/shoutouts">
+            <Shoutouts />
           </Route>
         </Switch>
       </Router>
