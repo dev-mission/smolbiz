@@ -14,12 +14,10 @@ import Passwords from './Passwords';
 import Register from './Register';
 import Items from './Items/Items';
 import Shops from './Shops/Shops';
-<<<<<<< HEAD
 import Shoutouts from './Shoutouts/Shoutouts';
 import Badges from './Badges/Badges';
-=======
 import Kudos from './Kudos/Kudos';
->>>>>>> origin
+import Shoppers from './Shoppers/Shoppers';
 
 function App() {
   return (
@@ -50,13 +48,14 @@ function App() {
           <Route path= "/shops">
             <Shops />
           </Route>
-<<<<<<< HEAD
+          <Route path= "/shoppers">
+            <Shoppers />
+          </Route>
           <Route path= "/shoutouts">
             <Shoutouts />
-=======
+          </Route>
           <Route path= "/kudos">
             <Kudos />
->>>>>>> origin
           </Route>
         </Switch>
       </Router>

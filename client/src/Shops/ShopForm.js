@@ -67,27 +67,27 @@ function ShopForm() {
             <form onSubmit={onSubmit}>
                 <div className="mb-3">
                     <label className="form-label">UserID</label>
-                    <input className="form-control" type="integer" name="UserID" value={shop.UserID} onChange={onChange} />
+                    <input className="form-control" type="number" name="UserID" value={shop.UserID} onChange={onChange} />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Phone Number</label>
-                    <input className="form-control" type="integer" name="phoneNumber" value={shop.phoneNumber} onChange={onChange} />
+                    <input className="form-control" type="number" name="phoneNumber" value={shop.phoneNumber} onChange={onChange} />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Shop Name</label>
-                    <input className="form-control" type="string" name="shopName" value={shop.shopName} onChange={onChange} />
+                    <input className="form-control" type="text" name="shopName" value={shop.shopName} onChange={onChange} />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Website URL</label>
-                    <input className="form-control" type="string" name="websiteURL" value={shop.websiteURL} onChange={onChange} />
+                    <input className="form-control" type="text" name="websiteURL" value={shop.websiteURL} onChange={onChange} />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Location Address</label>
-                    <input className="form-control" type="string" name="locationAddress" value={shop.locationAddress} onChange={onChange} />
+                    <input className="form-control" type="text" name="locationAddress" value={shop.locationAddress} onChange={onChange} />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Shop Description</label>
-                    <input className="form-control" type="string" name="shopDescription" value={shop.shopDescription} onChange={onChange} />
+                    <input className="form-control" type="text" name="shopDescription" value={shop.shopDescription} onChange={onChange} />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Owner Bio</label>
@@ -99,10 +99,6 @@ function ShopForm() {
                 </div>
                 <button className="btn btn-primary" type="submit">Submit</button>
             </form>
-<<<<<<< HEAD
-=======
-
->>>>>>> origin
             <p>{JSON.stringify(shop)}</p>
         </main>
     );
