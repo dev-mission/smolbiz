@@ -14,7 +14,10 @@ import Passwords from './Passwords';
 import Register from './Register';
 import Items from './Items/Items';
 import Shops from './Shops/Shops';
+import Shoutouts from './Shoutouts/Shoutouts';
+import Badges from './Badges/Badges';
 import Kudos from './Kudos/Kudos';
+import Shoppers from './Shoppers/Shoppers';
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path= "/badges">
+            <Badges />
           </Route>
           <Route path="/login">
             <Login />
@@ -41,6 +47,12 @@ function App() {
           </Route>
           <Route path= "/shops">
             <Shops />
+          </Route>
+          <Route path= "/shoppers">
+            <Shoppers />
+          </Route>
+          <Route path= "/shoutouts">
+            <Shoutouts />
           </Route>
           <Route path= "/kudos">
             <Kudos />

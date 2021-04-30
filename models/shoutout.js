@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     UserID: DataTypes.INTEGER,
     ShopID: DataTypes.INTEGER,
     creationDate: DataTypes.DATE,
-    shoutoutText: DataTypes.TEXT
+    shoutoutText: DataTypes.TEXT,
+    shoutoutTitle: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'Shoutout',
