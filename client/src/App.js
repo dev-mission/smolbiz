@@ -48,6 +48,18 @@ function App() {
           <AuthProtectedRoute path= "/shops">
             <Shops />
           </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/shoppers">
+            <Shoppers />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/kudos">
+            <Kudos />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/badges">
+            <Badges />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/shoutouts">
+            <Shoutouts />
+          </AuthProtectedRoute>
         </Switch>
       </Router>
     </AuthContextProvider>

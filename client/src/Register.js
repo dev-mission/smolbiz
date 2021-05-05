@@ -61,6 +61,11 @@ function Register() {
                   {error?.errorMessagesHTMLFor?.('lastName')}
                 </div>
                 <div className="mb-3">
+                  <label className="form-label" htmlFor="username">Username</label>
+                  <input type="text" class={classNames('form-control', {'is-invalid': error?.errorsFor?.('username')})} id="username" name="username" onChange={onChange} value={user.username} />
+                  {error?.errorMessagesHTMLFor?.('username')}
+                </div>
+                <div className="mb-3">
                   <label className="form-label" htmlFor="email">Email</label>
                   <input type="text" class={classNames('form-control', {'is-invalid': error?.errorsFor?.('email')})} id="email" name="email" onChange={onChange} value={user.email} />
                   {error?.errorMessagesHTMLFor?.('email')}
