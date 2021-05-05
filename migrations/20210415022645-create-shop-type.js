@@ -11,7 +11,7 @@ module.exports = {
       typeOfStore: {
         type: Sequelize.STRING
       },
-      ShopID: {
+      ShopId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

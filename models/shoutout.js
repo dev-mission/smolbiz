@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Shoutout.init({
-    UserID: DataTypes.INTEGER,
-    ShopID: DataTypes.INTEGER,
+    UserId: DataTypes.INTEGER,
+    ShopId: DataTypes.INTEGER,
     creationDate: DataTypes.DATE,
     shoutoutText: DataTypes.TEXT,
     shoutoutTitle: DataTypes.TEXT

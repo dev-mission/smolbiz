@@ -12,7 +12,7 @@ function BadgeForm() {
     
     //initial value of section (in this case, obj with name, slug, and position attributes)
     const [badge, setBadge] = useState({
-        ShopperID: 0,
+        ShopperId: 0,
         badgeEarned: ''
     });
 
@@ -60,7 +60,7 @@ function BadgeForm() {
             <form onSubmit={onSubmit}>
                 <div className="mb-3">
                     <label className="form-label">Shopper ID</label>
-                    <input className="form-control" type="text" name="ShopperID" value={badge.ShopperID} onChange={onChange} />
+                    <input className="form-control" type="text" name="ShopperID" value={badge.ShopperId} onChange={onChange} />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Badge Earned</label>

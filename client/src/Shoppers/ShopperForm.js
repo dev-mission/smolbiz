@@ -12,7 +12,7 @@ function ShopperForm() {
     
     //initial value of section (in this case, obj with name, slug, and position attributes)
     const [shopper, setShopper] = useState({
-        UserID: 0,
+        UserId: 0,
         zipcode: 0
     });
 
@@ -59,8 +59,8 @@ function ShopperForm() {
             <h1>Shopper Form</h1>
             <form onSubmit={onSubmit}>
                 <div className="mb-3">
-                    <label className="form-label">User ID</label>
-                    <input className="form-control" type="text" name="UserID" value={shopper.UserID} onChange={onChange} />
+                    <label className="form-label">User Id</label>
+                    <input className="form-control" type="text" name="UserID" value={shopper.UserId} onChange={onChange} />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">zipcode</label>
