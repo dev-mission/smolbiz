@@ -12,8 +12,7 @@ function ShopForm() {
     
     //initial value of section (in this case, obj with name, slug, and position attributes)
     const [shop, setShop] = useState({
-        UserID: 0,
-        phoneNumber: 0,
+        phoneNumber: '',
         shopName: '',
         websiteURL: '',
         locationAddress: '',
@@ -66,12 +65,8 @@ function ShopForm() {
             <h1>Shop Form</h1>
             <form onSubmit={onSubmit}>
                 <div className="mb-3">
-                    <label className="form-label">UserID</label>
-                    <input className="form-control" type="number" name="UserID" value={shop.UserID} onChange={onChange} />
-                </div>
-                <div className="mb-3">
                     <label className="form-label">Phone Number</label>
-                    <input className="form-control" type="number" name="phoneNumber" value={shop.phoneNumber} onChange={onChange} />
+                    <input className="form-control" type="text" name="phoneNumber" value={shop.phoneNumber} onChange={onChange} />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Shop Name</label>

@@ -11,11 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Shop.belongsTo(models.User);
+      Shop.hasMany(models.Item);
     }
   };
   Shop.init({
-    UserID: DataTypes.INTEGER,
-    phoneNumber: DataTypes.INTEGER,
+    phoneNumber: DataTypes.STRING,
     shopName: DataTypes.STRING,
     websiteURL: DataTypes.STRING,
     locationAddress: DataTypes.STRING,
