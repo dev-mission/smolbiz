@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Kudo.init({
-    ShopperID: DataTypes.INTEGER,
-    ShoutoutID: DataTypes.INTEGER
+    ShopperId: DataTypes.INTEGER,
+    ShoutoutId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Kudo',
