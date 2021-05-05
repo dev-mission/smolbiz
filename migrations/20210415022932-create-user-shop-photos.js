@@ -8,13 +8,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      ShopID: {
+      ShopId: {
         type: Sequelize.INTEGER
       },
-      UserID: {
+      UserId: {
         type: Sequelize.INTEGER
       },
-      ShoutoutID: {
+      ShoutoutId: {
         type: Sequelize.INTEGER
       },
       fileImage: {

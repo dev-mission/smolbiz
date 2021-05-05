@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   OwnerShopPhoto.init({
-    ShopID: DataTypes.INTEGER,
+    ShopId: DataTypes.INTEGER,
     fileImage: DataTypes.STRING,
     caption: DataTypes.STRING
   }, {
