@@ -9,14 +9,14 @@ const models = require('../../models');
 router.get('/', async function(req, res) {
     //request data from user/network 
     //decide response- json data that is in an array
-    const rows = await models.Kudo.findAll();
+    const rows = await models.Badge.findAll();
     res.json(rows);
 });
 
 router.post('/', async function(req, res) {
     //build is not async (not to database, build new Skill row in memory)
     //the body is the extracted data from the request
-    const row = models.Kudo.build(req.body);
+    const row = models.Badge.build(req.body);
     //try to save this new row
     try {
       await row.save();
@@ -31,7 +31,7 @@ router.post('/', async function(req, res) {
   });
 
   router.get('/:id', async function(req, res) {
-    const row = await models.Kudo.findByPk(req.params.id);
+    const row = await models.Badge.findByPk(req.params.id);
     if (row) {
       res.json(row);
     } else {
@@ -40,7 +40,7 @@ router.post('/', async function(req, res) {
   });
   
   router.patch('/:id', async function(req, res) {
-    const row = await models.Kudo.findByPk(req.params.id);
+    const row = await models.Badge.findByPk(req.params.id);
     if (row) {
       try {
         await row.update(req.body);
@@ -54,7 +54,7 @@ router.post('/', async function(req, res) {
   })
   
   router.delete('/:id', async function(req, res) {
-    const row = await models.Kudo.findByPk(req.params.id);
+    const row = await models.Badge.findByPk(req.params.id);
     if (row) {
       await row.destroy();
       res.status(HttpStatus.OK).end();

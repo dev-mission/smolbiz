@@ -20,6 +20,9 @@ module.exports = {
       shoutoutText: {
         type: Sequelize.TEXT
       },
+      shoutoutTitle: {
+        type: Sequelize.TEXT
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

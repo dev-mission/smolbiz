@@ -94,7 +94,6 @@ function ShopForm() {
                 </div>
                 <button className="btn btn-primary" type="submit">Submit</button>
             </form>
-
             <p>{JSON.stringify(shop)}</p>
         </main>
     );
