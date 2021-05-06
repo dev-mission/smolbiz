@@ -13,6 +13,11 @@ import Login from './Login';
 import Passwords from './Passwords';
 import Register from './Register';
 import Items from './Items/Items';
+import ShopTypes from './ShopTypes/ShopTypes';
+import CommunityIdentities from './CommunityIdentities/CommunityIdentities';
+import OwnerShopPhotos from './OwnerShopPhotos/OwnerShopPhotos';
+
+
 
 function App() {
   return (
@@ -36,6 +41,15 @@ function App() {
           )}
           <Route path= "/items">
             <Items />
+          </Route>
+          <Route path= "/shoptypes">
+            <ShopTypes />
+          </Route>
+          <Route path= "/communityidentities">
+            <CommunityIdentities />
+          </Route>
+          <Route path= "/ownershopphotos">
+            <OwnerShopPhotos />
           </Route>
         </Switch>
       </Router>
