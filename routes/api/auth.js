@@ -38,6 +38,7 @@ if (process.env.REACT_APP_FEATURE_REGISTRATION === 'true') {
     const user = models.User.build({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
+      username: req.body.username,
       email: req.body.email,
     });
     user.password = req.body.password;

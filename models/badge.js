@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Badge.init({
-    ShopperID: DataTypes.INTEGER,
+    ShopperId: DataTypes.INTEGER,
     badgeEarned: DataTypes.STRING
   }, {
     sequelize,

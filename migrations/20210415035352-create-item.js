@@ -8,10 +8,12 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      ShopID: {
+      ShopId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
-      UserID: {
+      UserId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       fileImage: {

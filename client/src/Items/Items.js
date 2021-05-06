@@ -1,7 +1,7 @@
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 
 import ItemsList from './ItemsList';
-import ItemsForm from './ItemsForm';
+import ItemForm from './ItemForm';
 
 function Items(){
     //from reactRouterDOM, nested Route to reference existing path
@@ -14,10 +14,10 @@ function Items(){
                 <ItemsList />
             </Route>
             <Route path = {`${path}/new`}>
-                <ItemsForm />
+                <ItemForm />
             </Route>
             <Route path = {`${path}/:id/edit`}>
-                <ItemsForm />
+                <ItemForm />
             </Route>  
         </Switch>
     );

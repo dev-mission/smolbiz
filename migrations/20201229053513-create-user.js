@@ -21,6 +21,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      username: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
       email: {
         allowNull: false,
         type: Sequelize.CITEXT
@@ -62,6 +66,10 @@ module.exports = {
     });
     await queryInterface.addIndex('Users', {
       fields: ['email'],
+      unique: true
+    });
+    await queryInterface.addIndex('Users', {
+      fields: ['username'],
       unique: true
     });
     await queryInterface.addIndex('Users', {
