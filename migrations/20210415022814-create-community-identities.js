@@ -11,7 +11,7 @@ module.exports = {
       ShopId: {
         type: Sequelize.INTEGER
       },
-      communityIdentities: {
+      identities: {
         type: Sequelize.STRING
       },
       createdAt: {
