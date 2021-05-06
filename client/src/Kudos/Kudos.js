@@ -1,9 +1,9 @@
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 
-import ItemsList from './ItemsList';
-import ItemForm from './ItemForm';
+import KudosList from './KudosList';
+import KudoForm from './KudoForm';
 
-function Items(){
+function Kudos(){
     //from reactRouterDOM, nested Route to reference existing path
     //read, index
     const {path} = useRouteMatch();
@@ -11,16 +11,16 @@ function Items(){
     return (
         <Switch>
             <Route exact path = {path}>
-                <ItemsList />
+                <KudosList />
             </Route>
             <Route path = {`${path}/new`}>
-                <ItemForm />
+                <KudoForm />
             </Route>
             <Route path = {`${path}/:id/edit`}>
-                <ItemForm />
+                <KudoForm />
             </Route>  
         </Switch>
     );
 }
 
-export default Items;
+export default Kudos;

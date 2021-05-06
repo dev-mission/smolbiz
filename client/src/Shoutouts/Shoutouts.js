@@ -1,9 +1,9 @@
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 
-import ItemsList from './ItemsList';
-import ItemForm from './ItemForm';
+import ShoutoutsList from './ShoutoutsList';
+import ShoutoutForm from './ShoutoutForm';
 
-function Items(){
+function Shoutouts(){
     //from reactRouterDOM, nested Route to reference existing path
     //read, index
     const {path} = useRouteMatch();
@@ -11,16 +11,16 @@ function Items(){
     return (
         <Switch>
             <Route exact path = {path}>
-                <ItemsList />
+                <ShoutoutsList />
             </Route>
             <Route path = {`${path}/new`}>
-                <ItemForm />
+                <ShoutoutForm />
             </Route>
             <Route path = {`${path}/:id/edit`}>
-                <ItemForm />
+                <ShoutoutForm />
             </Route>  
         </Switch>
     );
 }
 
-export default Items;
+export default Shoutouts;

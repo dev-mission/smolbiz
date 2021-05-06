@@ -8,16 +8,19 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      UserID: {
+      UserId: {
         type: Sequelize.INTEGER
       },
-      ShopID: {
+      ShopId: {
         type: Sequelize.INTEGER
       },
       creationDate: {
         type: Sequelize.DATE
       },
       shoutoutText: {
+        type: Sequelize.TEXT
+      },
+      shoutoutTitle: {
         type: Sequelize.TEXT
       },
       createdAt: {

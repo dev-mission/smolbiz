@@ -11,7 +11,7 @@ module.exports = {
       CommunityIdentitiesID: {
         type: Sequelize.INTEGER
       },
-      ShopperID: {
+      ShopperId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

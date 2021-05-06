@@ -6,7 +6,7 @@ import {
 
 import './App.scss';
 
-import {AuthContextProvider} from './AuthContext';
+import {AuthContextProvider, AuthProtectedRoute} from './AuthContext';
 import Header from './Header';
 import Home from './Home';
 import Login from './Login';
@@ -16,8 +16,11 @@ import Items from './Items/Items';
 import ShopTypes from './ShopTypes/ShopTypes';
 import CommunityIdentities from './CommunityIdentities/CommunityIdentities';
 import OwnerShopPhotos from './OwnerShopPhotos/OwnerShopPhotos';
-
-
+import Shops from './Shops/Shops';
+import Shoutouts from './Shoutouts/Shoutouts';
+import Badges from './Badges/Badges';
+import Kudos from './Kudos/Kudos';
+import Shoppers from './Shoppers/Shoppers';
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path= "/badges">
+            <Badges />
           </Route>
           <Route path="/login">
             <Login />
@@ -39,18 +45,33 @@ function App() {
               <Register />
             </Route>
           )}
-          <Route path= "/items">
+          <AuthProtectedRoute path= "/items">
             <Items />
-          </Route>
-          <Route path= "/shoptypes">
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/shoptypes">
             <ShopTypes />
-          </Route>
-          <Route path= "/communityidentities">
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/communityidentities">
             <CommunityIdentities />
-          </Route>
-          <Route path= "/ownershopphotos">
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/ownershopphotos">
             <OwnerShopPhotos />
-          </Route>
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/shops">
+            <Shops />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/shoppers">
+            <Shoppers />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/kudos">
+            <Kudos />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/badges">
+            <Badges />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/shoutouts">
+            <Shoutouts />
+          </AuthProtectedRoute>
         </Switch>
       </Router>
     </AuthContextProvider>

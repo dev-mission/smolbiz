@@ -11,15 +11,16 @@ const models = require('../../models');
 router.get('/', async function(req, res) {
   //request data from user/network 
   //decide response- json data that is in an array
-  const rows = await models.Item.findAll();
+  const rows = await models.Shop.findAll();
   res.json(rows);
 });
 
 router.post('/', interceptors.requireLogin, async function(req, res) {
   //build is not async (not to database, build new Skill row in memory)
   //the body is the extracted data from the request
-  const row = models.Item.build(req.body);
-  //TODO: ensure logged in user is an owner of this shop
+  const row = models.Shop.build(req.body);
+  //the requireLogin interceptor ensures that the client is logged in, and
+  //the user object is accessible on the request object as follows
   row.UserId = req.user.id;
   //try to save this new row
   try {
@@ -35,7 +36,7 @@ router.post('/', interceptors.requireLogin, async function(req, res) {
 });
 
 router.get('/:id', async function(req, res) {
-  const row = await models.Item.findByPk(req.params.id);
+  const row = await models.Shop.findByPk(req.params.id);
   if (row) {
     res.json(row);
   } else {
@@ -44,7 +45,7 @@ router.get('/:id', async function(req, res) {
 });
 
 router.patch('/:id', async function(req, res) {
-  const row = await models.Item.findByPk(req.params.id);
+  const row = await models.Shop.findByPk(req.params.id);
   if (row) {
     try {
       await row.update(req.body);
@@ -58,7 +59,7 @@ router.patch('/:id', async function(req, res) {
 })
 
 router.delete('/:id', async function(req, res) {
-  const row = await models.Item.findByPk(req.params.id);
+  const row = await models.Shop.findByPk(req.params.id);
   if (row) {
     await row.destroy();
     res.status(HttpStatus.OK).end();

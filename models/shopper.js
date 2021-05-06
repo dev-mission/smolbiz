@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Shopper.init({
-    UserID: DataTypes.STRING,
+    UserId: DataTypes.STRING,
     points: DataTypes.INTEGER,
     zipCode: DataTypes.INTEGER,
     bio: DataTypes.TEXT

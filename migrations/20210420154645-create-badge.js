@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      ShopperID: {
+      ShopperId: {
         type: Sequelize.INTEGER
       },
       badgeEarned: {
