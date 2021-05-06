@@ -13,6 +13,9 @@ import Login from './Login';
 import Passwords from './Passwords';
 import Register from './Register';
 import Items from './Items/Items';
+import ShopTypes from './ShopTypes/ShopTypes';
+import CommunityIdentities from './CommunityIdentities/CommunityIdentities';
+import OwnerShopPhotos from './OwnerShopPhotos/OwnerShopPhotos';
 import Shops from './Shops/Shops';
 import Shoutouts from './Shoutouts/Shoutouts';
 import Badges from './Badges/Badges';
@@ -45,8 +48,29 @@ function App() {
           <AuthProtectedRoute path= "/items">
             <Items />
           </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/shoptypes">
+            <ShopTypes />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/communityidentities">
+            <CommunityIdentities />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/ownershopphotos">
+            <OwnerShopPhotos />
+          </AuthProtectedRoute>
           <AuthProtectedRoute path= "/shops">
             <Shops />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/shoppers">
+            <Shoppers />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/kudos">
+            <Kudos />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/badges">
+            <Badges />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/shoutouts">
+            <Shoutouts />
           </AuthProtectedRoute>
         </Switch>
       </Router>

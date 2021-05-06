@@ -8,6 +8,7 @@ function Login() {
   const authContext = useAuthContext();
   const history = useHistory();
 
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -43,6 +44,10 @@ function Login() {
                 <div className="alert alert-danger">Invalid email and/or password.</div>
               )}
               <form onSubmit={onSubmit}>
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="username">Username</label>
+                  <input type="text" className="form-control" id="username" name="username" value={username} onChange={e => setUsername(e.target.value)} />
+                </div>
                 <div className="mb-3">
                   <label className="form-label" htmlFor="email">Email</label>
                   <input type="text" className="form-control" id="email" name="email" value={email} onChange={e => setEmail(e.target.value)} />

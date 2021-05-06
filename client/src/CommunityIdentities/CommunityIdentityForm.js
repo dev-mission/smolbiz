@@ -4,34 +4,34 @@ import Api from '../Api';
 
 //to add new component, make new file
 //to create (crud), use forms
-function BadgeForm() {
+function CommunityIdentityForm() {
 
     //:id from Sections.js 
     const {id} = useParams();
     const history = useHistory();
-    
+
     //initial value of section (in this case, obj with name, slug, and position attributes)
-    const [badge, setBadge] = useState({
-        ShopperId: 0,
-        badgeEarned: ''
+    const [communityidentity, setCommunityIdentity] = useState({
+        identities: '',
+        ShopID: ''
     });
 
     //side effects, don't directly interact with output, don't refresh when it changes
     useEffect(function(){
         if(id){
-            Api.badges.get(id).then((response) => setBadge(response.data));
+            Api.communityidentities.get(id).then((response) => setCommunityIdentity(response.data));
         }
     }, []);
 
     function onChange(event) {
 
         //new object with current objects in section array
-        const newBadge = { ...badge };
-        
+        const newCommunityIdentity = { ...communityidentity };
+
         //look for which name, and change the obj with that name with inputted 'value'
         //modify model (section)
-        newBadge[event.target.name] = event.target.value;
-        setBadge(newBadge);
+        newCommunityIdentity[event.target.name] = event.target.value;
+        setCommunityIdentity(newCommunityIdentity);
     }
     //async function execute (multitasking) js continue running when server connects
     async function onSubmit(event) {
@@ -42,13 +42,13 @@ function BadgeForm() {
 
             //update
             if(id){
-                await Api.badges.update(id, badge);
+                await Api.communityidentities.update(id, communityidentity);
             } else{
-                await Api.badges.create(badge);
+                await Api.communityidentities.create(communityidentity);
             }
 
             //add to browser history,, aka go to /sections
-            history.push('/badges');
+            history.push('/communityidentities');
         } catch (error) {
             console.log(error);
         }
@@ -56,21 +56,21 @@ function BadgeForm() {
 
     return (
         <main className="container">
-            <h1>Badge Form</h1>
+            <h1>CommunityIdentity Form</h1>
             <form onSubmit={onSubmit}>
                 <div className="mb-3">
-                    <label className="form-label">Shopper ID</label>
-                    <input className="form-control" type="text" name="ShopperID" value={badge.ShopperId} onChange={onChange} />
+                    <label className="form-label">CommunityIdentities</label>
+                    <input className="form-control" type="text" name="identities" value={communityidentity.identities} onChange={onChange} />
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">Badge Earned</label>
-                    <input className="form-control" type="text" name="badgeEarned" value={badge.badgeEarned} onChange={onChange} />
+                    <label className="form-label">ShopID</label>
+                    <input className="form-control" type="text" name="ShopID" value={communityidentity.ShopID} onChange={onChange} />
                 </div>
                 <button className="btn btn-primary" type="submit">Submit</button>
             </form>
-            <p>{JSON.stringify(badge)}</p>
+            <p>{JSON.stringify(communityidentity)}</p>
         </main>
     );
 }
 
-export default BadgeForm;
+export default CommunityIdentityForm; 

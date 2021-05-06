@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   FavoriteCommunityIdentity.init({
     CommunityIdentitiesID: DataTypes.INTEGER,
-    ShopperID: DataTypes.INTEGER
+    ShopperId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'FavoriteCommunityIdentity',

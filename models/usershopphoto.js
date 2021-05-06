@@ -14,9 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   UserShopPhoto.init({
-    ShopID: DataTypes.INTEGER,
-    UserID: DataTypes.INTEGER,
-    ShoutoutID: DataTypes.INTEGER,
+    ShopId: DataTypes.INTEGER,
+    UserId: DataTypes.INTEGER,
+    ShoutoutId: DataTypes.INTEGER,
     fileImage: DataTypes.STRING,
     caption: DataTypes.STRING
   }, {

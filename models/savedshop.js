@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   SavedShop.init({
-    ShopperID: DataTypes.INTEGER,
-    ShopID: DataTypes.INTEGER
+    ShopperId: DataTypes.INTEGER,
+    ShopId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'SavedShop',
