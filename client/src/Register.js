@@ -10,9 +10,12 @@ import ValidationError from './ValidationError';
 function Register() {
   const history = useHistory();
 
+  const [userType, setUserType] = useState(null);
+
   const [user, setUser] = useState({
     firstName: '',
     lastName: '',
+    username: '',
     email: '',
     password: ''
   });
@@ -22,6 +25,7 @@ function Register() {
     const newUser = {...user};
     newUser[event.target.name] = event.target.value;
     setUser(newUser);
+    setUserType(userType);
   };
 
   const onSubmit = async function(event) {
@@ -29,7 +33,18 @@ function Register() {
     setError(null);
     try {
       await Api.auth.register(user);
-      history.push('/login', {flash: 'Your account has been created!'});
+        if(userType == "BusinessOwner"){
+          //replace / with where Business Owners are to be directed
+          history.push('/login', {flash: 'Your account has been created!'});
+        }
+        else if(userType == "Shopper"){
+          //replace / with where Shoppers are to be directed
+          history.push('/', {flash: 'Your account has been created!'});
+        }
+        else{
+          //idk if this is right
+          setError(new ValidationError(error.response.data));
+        }
     } catch (error) {
       if (error.response?.status === StatusCodes.UNPROCESSABLE_ENTITY) {
         setError(new ValidationError(error.response.data));
@@ -74,6 +89,13 @@ function Register() {
                   <label className="form-label" htmlFor="password">Password</label>
                   <input type="password" class={classNames('form-control', {'is-invalid': error?.errorsFor?.('password')})} id="password" name="password" onChange={onChange} value={user.password} />
                   {error?.errorMessagesHTMLFor?.('password')}
+                </div>
+                <div className = "mb-3">
+                  <label className="form-label" htmlFor="userType">Select one of the following:</label>
+                  <select class="form-select" aria-label="Default select example" onChange={onChange} value={userType}>
+                    <option value="BusinessOwner">Business Owner</option>
+                    <option value="Shopper">Shopper</option>
+                  </select>
                 </div>
                 <div className="mb-3 d-grid">
                   <button className="btn btn-primary" type="submit">Submit</button>

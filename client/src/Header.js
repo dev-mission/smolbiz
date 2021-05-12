@@ -29,7 +29,7 @@ function Header() {
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light fixed-top">
       <div className="container">
-        <Link className="navbar-brand" to="/">My App</Link>
+        <Link className="navbar-brand mb-0 h1" to="/">SmolBiz</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>    
@@ -38,14 +38,32 @@ function Header() {
             <li className="nav-item active">
               <Link className="nav-link" aria-current="page" to="/">Home</Link>
             </li>
+            <li className="nav-item active">
+              <Link className="nav-link" aria-current="page" to="/FriendsFeed">Friends' Feed</Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" aria-current="page" to="/Leaderboard">Leaderboard</Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" aria-current="page" to="/AboutUs">About Us</Link>
+            </li>
+            
             <div className="flex-grow-1 d-flex justify-content-end">
               {user && (
-                <li className="nav-item">
-                  <a className="nav-link" href="/logout" onClick={onLogout}>Log out</a>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {user.username}
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <div class="dropdown-divider"></div>
+                    <a className="dropdown-item" href="/logout" onClick={onLogout}>Log out</a>
+                  </div>
                 </li>)}
               {!user && (
                 <li className="nav-item">
-                  <Link className="nav-link" to="/login">Log in</Link>
+                  <Link className="nav-link" to="/login">Sign Up or Log in</Link>
                 </li>
               )}
             </div>
