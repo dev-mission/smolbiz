@@ -38,16 +38,25 @@ router.get('/:id', interceptors.requireAdmin, function(req, res, next) {
   });
 });
 
-router.patch('/:id', interceptors.requireAdmin, function(req, res, next) {
+router.patch('/:id', interceptors.requireLogin, function(req, res, next) {
+  // if user is not an admin, they can only update their own user record
+  if (!req.user.isAdmin) {
+    if (req.user.id !== parseInt(req.params.id)) {
+      res.status(HttpStatus.FORBIDDEN).end();
+      return;
+    }
+  }
   models.sequelize.transaction(function(transaction) {
     return models.User.findByPk(req.params.id, {transaction}).then(function(user) {
-      return helpers.handleUpload(user, "iconUrl", req.body.iconUrl, 'users/icon');
+      return helpers.handleUpload(user, "photo", req.body.photo, 'users/photo');
     }).then(function(user) {
       return user.update({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
-        iconUrl: user.iconUrl
+        birthday: req.body.birthday,
+        gender: req.body.gender,
+        photo: user.photo
       }, {transaction});
     }).then(function(user) {
       if (req.body.password && req.body.password != '') {
