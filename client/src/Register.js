@@ -13,8 +13,6 @@ function Register() {
   const authContext = useAuthContext();
   const [userType, setUserType] = useState('Shopper');
 
-  const [userType, setUserType] = useState('Shopper');
-
   const [user, setUser] = useState({
     firstName: '',
     lastName: '',
