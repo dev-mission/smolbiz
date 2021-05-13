@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  CommunityIdentities.init({
+  CommunityIdentity.init({
     ShopId: DataTypes.INTEGER,
     identities: DataTypes.STRING
   }, {
