@@ -47,20 +47,21 @@ function Header() {
             <li className="nav-item active">
               <Link className="nav-link" aria-current="page" to="/AboutUs">About Us</Link>
             </li>
-            
+  
             <div className="flex-grow-1 d-flex justify-content-end">
               {user && (
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {user.username}
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {user.firstName}
                   </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Profile</a>
-                    <a class="dropdown-item" href="#">Settings</a>
-                    <div class="dropdown-divider"></div>
-                    <a className="dropdown-item" href="/logout" onClick={onLogout}>Log out</a>
-                  </div>
-                </li>)}
+                  <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a className="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><hr className="dropdown-divider" /></li>
+                    <li><a className="dropdown-item" href="/logout" onClick={onLogout}>Log out</a></li>
+                  </ul>
+                </li>
+                )}
               {!user && (
                 <li className="nav-item">
                   <Link className="nav-link" to="/login">Sign Up or Log in</Link>
