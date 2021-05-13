@@ -10,7 +10,7 @@ import ValidationError from './ValidationError';
 function Register() {
   const history = useHistory();
 
-  const [userType, setUserType] = useState(null);
+  const [userType, setUserType] = useState('Shopper');
 
   const [user, setUser] = useState({
     firstName: '',
@@ -25,7 +25,6 @@ function Register() {
     const newUser = {...user};
     newUser[event.target.name] = event.target.value;
     setUser(newUser);
-    setUserType(userType);
   };
 
   const onSubmit = async function(event) {
@@ -92,7 +91,7 @@ function Register() {
                 </div>
                 <div className = "mb-3">
                   <label className="form-label" htmlFor="userType">Select one of the following:</label>
-                  <select class="form-select" aria-label="Default select example" onChange={onChange} value={userType}>
+                  <select class="form-select" aria-label="Default select example" onChange={(event) => setUserType(event.target.value)} value={userType}>
                     <option value="BusinessOwner">Business Owner</option>
                     <option value="Shopper">Shopper</option>
                   </select>
