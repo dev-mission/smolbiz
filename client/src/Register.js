@@ -1,15 +1,16 @@
-import {useState} from 'react';
-import {useHistory, Link} from 'react-router-dom';
+import { useState } from 'react';
+import { useHistory, Link } from 'react-router-dom';
 import classNames from 'classnames';
-import {StatusCodes} from 'http-status-codes'
+import { StatusCodes } from 'http-status-codes'
 
+import { useAuthContext } from './AuthContext';
 import Api from './Api';
 import UnexpectedError from './UnexpectedError';
 import ValidationError from './ValidationError';
 
 function Register() {
   const history = useHistory();
-
+  const authContext = useAuthContext();
   const [userType, setUserType] = useState('Shopper');
 
   const [user, setUser] = useState({
@@ -21,29 +22,30 @@ function Register() {
   });
   const [error, setError] = useState(null);
 
-  const onChange = function(event) {
-    const newUser = {...user};
+  const onChange = function (event) {
+    const newUser = { ...user };
     newUser[event.target.name] = event.target.value;
     setUser(newUser);
   };
 
-  const onSubmit = async function(event) {
+  const onSubmit = async function (event) {
     event.preventDefault();
     setError(null);
     try {
-      await Api.auth.register(user);
-        if(userType == "BusinessOwner"){
-          //replace / with where Business Owners are to be directed
-          history.push('/login', {flash: 'Your account has been created!'});
-        }
-        else if(userType == "Shopper"){
-          //replace / with where Shoppers are to be directed
-          history.push('/', {flash: 'Your account has been created!'});
-        }
-        else{
-          //idk if this is right
-          setError(new ValidationError(error.response.data));
-        }
+      const response = await Api.auth.register(user);
+      authContext.setUser(response.data);
+      if (userType === "BusinessOwner") {
+        //replace / with where Business Owners are to be directed
+        history.push('/login', { flash: 'Your account has been created!' });
+      }
+      else if (userType === "Shopper") {
+        //replace / with where Shoppers are to be directed
+        history.push('/', { flash: 'Your account has been created!' });
+      }
+      else {
+        //idk if this is right
+        setError(new ValidationError(error.response.data));
+      }
     } catch (error) {
       if (error.response?.status === StatusCodes.UNPROCESSABLE_ENTITY) {
         setError(new ValidationError(error.response.data));
@@ -66,30 +68,30 @@ function Register() {
                 )}
                 <div className="mb-3">
                   <label className="form-label" htmlFor="firstName">First name</label>
-                  <input type="text" class={classNames('form-control', {'is-invalid': error?.errorsFor?.('firstName')})} id="firstName" name="firstName" onChange={onChange} value={user.firstName} />
+                  <input type="text" class={classNames('form-control', { 'is-invalid': error?.errorsFor?.('firstName') })} id="firstName" name="firstName" onChange={onChange} value={user.firstName} />
                   {error?.errorMessagesHTMLFor?.('firstName')}
                 </div>
                 <div className="mb-3">
                   <label className="form-label" htmlFor="lastName">Last name</label>
-                  <input type="text" class={classNames('form-control', {'is-invalid': error?.errorsFor?.('lastName')})} id="lastName" name="lastName" onChange={onChange} value={user.lastName} />
+                  <input type="text" class={classNames('form-control', { 'is-invalid': error?.errorsFor?.('lastName') })} id="lastName" name="lastName" onChange={onChange} value={user.lastName} />
                   {error?.errorMessagesHTMLFor?.('lastName')}
                 </div>
                 <div className="mb-3">
                   <label className="form-label" htmlFor="username">Username</label>
-                  <input type="text" class={classNames('form-control', {'is-invalid': error?.errorsFor?.('username')})} id="username" name="username" onChange={onChange} value={user.username} />
+                  <input type="text" class={classNames('form-control', { 'is-invalid': error?.errorsFor?.('username') })} id="username" name="username" onChange={onChange} value={user.username} />
                   {error?.errorMessagesHTMLFor?.('username')}
                 </div>
                 <div className="mb-3">
                   <label className="form-label" htmlFor="email">Email</label>
-                  <input type="text" class={classNames('form-control', {'is-invalid': error?.errorsFor?.('email')})} id="email" name="email" onChange={onChange} value={user.email} />
+                  <input type="text" class={classNames('form-control', { 'is-invalid': error?.errorsFor?.('email') })} id="email" name="email" onChange={onChange} value={user.email} />
                   {error?.errorMessagesHTMLFor?.('email')}
                 </div>
                 <div className="mb-3">
                   <label className="form-label" htmlFor="password">Password</label>
-                  <input type="password" class={classNames('form-control', {'is-invalid': error?.errorsFor?.('password')})} id="password" name="password" onChange={onChange} value={user.password} />
+                  <input type="password" class={classNames('form-control', { 'is-invalid': error?.errorsFor?.('password') })} id="password" name="password" onChange={onChange} value={user.password} />
                   {error?.errorMessagesHTMLFor?.('password')}
                 </div>
-                <div className = "mb-3">
+                <div className="mb-3">
                   <label className="form-label" htmlFor="userType">Select one of the following:</label>
                   <select class="form-select" aria-label="Default select example" onChange={(event) => setUserType(event.target.value)} value={userType}>
                     <option value="BusinessOwner">Business Owner</option>
@@ -106,7 +108,7 @@ function Register() {
             </div>
           </div>
         </div>
-      </div>  
+      </div>
     </main>
   );
 }
