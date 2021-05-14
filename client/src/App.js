@@ -21,6 +21,7 @@ import Shoutouts from './Shoutouts/Shoutouts';
 import Badges from './Badges/Badges';
 import Kudos from './Kudos/Kudos';
 import Shoppers from './Shoppers/Shoppers';
+import UserShopPhotos from './UserShopPhotos/UserShopPhotos';
 
 function App() {
   return (
@@ -71,6 +72,9 @@ function App() {
           </AuthProtectedRoute>
           <AuthProtectedRoute path= "/shoutouts">
             <Shoutouts />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/usershopphotos">
+            <UserShopPhotos />
           </AuthProtectedRoute>
         </Switch>
       </Router>

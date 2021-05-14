@@ -15,5 +15,6 @@ router.use('/shoutouts', require('./shoutouts'));
 router.use('/badges', require('./badges'));
 router.use('/kudos', require('./kudos'));
 router.use('/shoppers', require('./shoppers'));
+router.use('/usershopphotos', require('./usershopphotos'));
 
 module.exports = router;
