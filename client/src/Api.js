@@ -42,6 +42,9 @@ const Api = {
   users: {
     me() {
       return instance.get('/api/users/me');
+    },
+    update(id, data) {
+      return instance.patch(`/api/users/${id}`, data);
     }
   },
   items: {
@@ -84,6 +87,9 @@ const Api = {
     },
     create(data) {
       return instance.post('/api/shops', data);
+    },
+    me(){
+      return instance.get('/api/shops/me');
     },
     get(id) {
       return instance.get(`/api/shops/${id}`);
@@ -204,6 +210,9 @@ const Api = {
     create(data) {
       return instance.post('/api/shoptypes', data);
     },
+    me() {
+      return instance.get('/api/shoptypes/me');
+    },
     get(id) {
       return instance.get(`/api/shoptypes/${id}`);
     },
@@ -220,6 +229,9 @@ const Api = {
     },
     create(data) {
       return instance.post('/api/communityidentities', data);
+    },
+    me() {
+      return instance.get('/api/communityidentities/me');
     },
     get(id) {
       return instance.get(`/api/communityidentities/${id}`);
