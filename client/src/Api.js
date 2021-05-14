@@ -186,6 +186,23 @@ const Api = {
       return instance.delete(`/api/usershopphotos/${id}`);
     }
   },
+  usershopphotos: {
+    index() {
+      return instance.get('/api/usershopphotos');
+    },
+    create(data) {
+      return instance.post('/api/usershopphotos', data);
+    },
+    get(id) {
+      return instance.get(`/api/usershopphotos/${id}`);
+    },
+    update(id, data) {
+      return instance.patch(`/api/usershopphotos/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/usershopphotos/${id}`);
+    }
+  },
   shoptypes: {
     index() {
       return instance.get('/api/shoptypes');

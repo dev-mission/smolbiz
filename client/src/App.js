@@ -22,6 +22,7 @@ import Badges from './Badges/Badges';
 import Kudos from './Kudos/Kudos';
 import Shoppers from './Shoppers/Shoppers';
 import SignUpShopper from './SignUpShopper';
+import UserShopPhotos from './UserShopPhotos/UserShopPhotos';
 
 function App() {
   return (
@@ -75,6 +76,9 @@ function App() {
           </AuthProtectedRoute>
           <AuthProtectedRoute path= "/signupshopper">
             <SignUpShopper />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/usershopphotos">
+            <UserShopPhotos />
           </AuthProtectedRoute>
         </Switch>
       </Router>
