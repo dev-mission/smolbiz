@@ -108,6 +108,9 @@ const Api = {
     create(data) {
       return instance.post('/api/shoppers', data);
     },
+    me() {
+      return instance.get('/api/shoppers/me');
+    },
     get(id) {
       return instance.get(`/api/shoppers/${id}`);
     },
