@@ -32,22 +32,22 @@ function Welcome() {
 
     //side effects, don't directly interact with output, don't refresh when it changes
     useEffect(function(){
-        Api.shops.me().then((response) => setShop(response.data));
-        Api.communityidentities.me().then((response) => setCommunityIdentity(response.data));
-        Api.shoptypes.me().then((response) => setShopType(response.data));
-        // Api.shops.me().then((response) => {
-        //     if (response.status === 200) {
-        //         setShop(response.data);
-        //     }});
-        // Api.communityidentities.me().then((response) => {
-        //     if (response.status === 200) {
-        //         setCommunityIdentity(response.data);
-        //     }});
-        // Api.shoptypes.me().then((response) => {
-        //     if (response.status === 200) {
-        //         setShopType(response.data);
-        //     }
-        // });
+        // Api.shops.me().then((response) => setShop(response.data));
+        // Api.communityidentities.me().then((response) => setCommunityIdentity(response.data));
+        // Api.shoptypes.me().then((response) => setShopType(response.data));
+        Api.shops.me().then((response) => {
+            if (response.status === 200) {
+                setShop(response.data);
+            }});
+        Api.communityidentities.me().then((response) => {
+            if (response.status === 200) {
+                setCommunityIdentity(response.data);
+            }});
+        Api.shoptypes.me().then((response) => {
+            if (response.status === 200) {
+                setShopType(response.data);
+            }
+        });
     }, []);
 
     function onChangeShop(event) {
