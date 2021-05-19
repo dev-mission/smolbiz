@@ -3,15 +3,15 @@ function Home() {
     <main className="container">
       <div className="row">
         <div className="col d-flex justify-content-center">
-          <h5>Connect and Shop in Your Neighborhood</h5>
+          <h5 className="p-1">Connect and Shop in Your Neighborhood</h5>
         </div>
       </div>
       <div className="row">
         {/*search bar JUSTIFY CENTER*/}
         <form class="col-md-6 offset-3">
-          <div class="row">
+          <div class="row m-2">
             <div className="offset-2 col-6">
-              <input class="form-control" type="search" placeholder="What can I help you find today?" aria-label="Search" />
+              <input class="form-control " type="search" placeholder="What can I help you find today?" aria-label="Search" />
             </div>
             <div className="col-4">
              <button class="btn btn-outline-success" type="submit">Search</button>
@@ -59,22 +59,174 @@ function Home() {
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-
       </div>
-      <h1>Home</h1>
-      <p>
-        <h2>Team members:</h2> 
-        <p>Serena Chen</p>
-      </p>
-      <h1>SmolBiz!</h1>
-      <h2>Team members:</h2>
-      <p>
-        Alice Wang<br />
-        Serena Chen<br />
-        Ashley Sheng 
-      </p>
-      <img src = "https://memegenerator.net/img/instances/73979818.jpg"></img>
-      <p>indeed very smol</p>
+      <div className="row">
+        <div className="col d-flex justify-content-center">
+          <h3 className="p-3">Shop by Category</h3>
+        </div>        
+      </div>
+      <div className="row d-flex justify-content-center">
+        <div className="col-md-3">
+          <div class="card" style={{"width ": "18rem"}}>
+            <img src="https://via.placeholder.com/200" className="card-img-top" alt="..." />
+            <div class="card-body">
+              <a href='#'><h5 className="card-title d-flex justify-content-center">Black-Owned Businesses</h5></a>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3">
+          <div class="card" style={{"width ": "18rem"}}>
+            <img src="https://via.placeholder.com/200" className="card-img-top" alt="..." />
+            <div class="card-body">
+              <a href='#'><h5 className="card-title d-flex justify-content-center">Youth-Owned Businesses</h5></a>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3">
+          <div class="card" style={{"width ": "18rem"}}>
+            <img src="https://via.placeholder.com/200" className="card-img-top" alt="..." />
+            <div class="card-body">
+              <a href='#'><h5 className="card-title d-flex justify-content-center">Asian-Owned Businesses</h5></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row d-flex justify-content-center">
+        <div className="col-md-3">
+          <div class="card" style={{"width ": "18rem"}}>
+            <img src="https://via.placeholder.com/200" className="card-img-top" alt="..." />
+            <div class="card-body">
+              <a href='#'><h5 className="card-title d-flex justify-content-center">LGBTQIA-Owned Businesses</h5></a>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3">
+          <div class="card" style={{"width ": "18rem"}}>
+            <img src="https://via.placeholder.com/200" className="card-img-top" alt="..." />
+            <div class="card-body">
+              <a href='#'><h5 className="card-title d-flex justify-content-center">Hispanic-Owned Businesses</h5></a>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3">
+          <div class="card" style={{"width ": "18rem"}}>
+            <img src="https://via.placeholder.com/200" className="card-img-top" alt="..." />
+            <div class="card-body">
+              <a href='#'><h5 className="card-title d-flex justify-content-center">Female-Owned Businesses</h5></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col d-flex justify-content-center">
+          <h3>Shoutouts from the Community</h3>
+        </div>        
+      </div>
+      <div className="row d-flex justify-content-center">
+        <div className="col-md-3">
+          <div class="card mb-3" style={{"max-width": "540px"}}>
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://via.placeholder.com/100x250" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Shoutout title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3">
+          <div class="card mb-3" style={{"max-width": "540px"}}>
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://via.placeholder.com/100x250" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Shoutout title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3">
+          <div class="card mb-3" style={{"max-width": "540px"}}>
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://via.placeholder.com/100x250" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Shoutout title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row d-flex justify-content-center">
+        <div className="col-md-3">
+          <div class="card mb-3" style={{"max-width": "540px"}}>
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://via.placeholder.com/100x250" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Shoutout title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3">
+          <div class="card mb-3" style={{"max-width": "540px"}}>
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://via.placeholder.com/100x250" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Shoutout title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3">
+          <div class="card mb-3" style={{"max-width": "540px"}}>
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://via.placeholder.com/100x250" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Shoutout title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row d-flex justify-content-center">
+        <div className="col-md-3 d-flex justify-content-center">
+          <button className="btn-primary">List View of all Shoutouts</button>
+        </div>
+      </div>
     </main>  
   );
 }
