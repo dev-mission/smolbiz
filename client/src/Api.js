@@ -54,6 +54,9 @@ const Api = {
     create(data) {
       return instance.post('/api/items', data);
     },
+    me() {
+      return instance.get('/api/items/me');
+    },
     get(id) {
       return instance.get(`/api/items/${id}`);
     },
@@ -79,6 +82,26 @@ const Api = {
     },
     delete(id) {
       return instance.delete(`/api/badges/${id}`);
+    }
+  },
+  communityidentities: {
+    index() {
+      return instance.get('/api/communityidentities');
+    },
+    create(data) {
+      return instance.post('/api/communityidentities', data);
+    },
+    me() {
+      return instance.get('/api/communityidentities/me');
+    },
+    get(id) {
+      return instance.get(`/api/communityidentities/${id}`);
+    },
+    update(id, data) {
+      return instance.patch(`/api/communityidentities/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/communityidentities/${id}`);
     }
   },
   shops: {
@@ -155,40 +178,6 @@ const Api = {
       return instance.delete(`/api/shoutouts/${id}`);
     }
   },
-  ownershopphotos: {
-    index() {
-      return instance.get('/api/ownershopphotos');
-    },
-    create(data) {
-      return instance.post('/api/ownershopphotos', data);
-    },
-    get(id) {
-      return instance.get(`/api/ownershopphotos/${id}`);
-    },
-    update(id, data) {
-      return instance.patch(`/api/ownershopphotos/${id}`, data);
-    },
-    delete(id) {
-      return instance.delete(`/api/ownershopphotos/${id}`);
-    }
-  },
-  usershopphotos: {
-    index() {
-      return instance.get('/api/usershopphotos');
-    },
-    create(data) {
-      return instance.post('/api/usershopphotos', data);
-    },
-    get(id) {
-      return instance.get(`/api/usershopphotos/${id}`);
-    },
-    update(id, data) {
-      return instance.patch(`/api/usershopphotos/${id}`, data);
-    },
-    delete(id) {
-      return instance.delete(`/api/usershopphotos/${id}`);
-    }
-  },
   usershopphotos: {
     index() {
       return instance.get('/api/usershopphotos');
@@ -226,32 +215,15 @@ const Api = {
       return instance.delete(`/api/shoptypes/${id}`);
     }
   },
-  communityidentities: {
-    index() {
-      return instance.get('/api/communityidentities');
-    },
-    create(data) {
-      return instance.post('/api/communityidentities', data);
-    },
-    me() {
-      return instance.get('/api/communityidentities/me');
-    },
-    get(id) {
-      return instance.get(`/api/communityidentities/${id}`);
-    },
-    update(id, data) {
-      return instance.patch(`/api/communityidentities/${id}`, data);
-    },
-    delete(id) {
-      return instance.delete(`/api/communityidentities/${id}`);
-    }
-  },
   ownershopphotos: {
     index() {
       return instance.get('/api/ownershopphotos');
     },
     create(data) {
       return instance.post('/api/ownershopphotos', data);
+    },
+    me() {
+      return instance.get('/api/communityidentities/me');
     },
     get(id) {
       return instance.get(`/api/ownershopphotos/${id}`);
