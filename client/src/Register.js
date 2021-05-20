@@ -40,7 +40,7 @@ function Register() {
       }
       else if (userType === "Shopper") {
         //replace / with where Shoppers are to be directed
-        history.push('/', { flash: 'Your account has been created!' });
+        history.push('/signupshopper', { flash: 'Your account has been created!' });
       }
       else {
         //idk if this is right

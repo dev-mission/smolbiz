@@ -42,6 +42,9 @@ const Api = {
   users: {
     me() {
       return instance.get('/api/users/me');
+    },
+    update(id, data) {
+      return instance.patch(`/api/users/${id}`, data);
     }
   },
   items: {
@@ -85,6 +88,9 @@ const Api = {
     create(data) {
       return instance.post('/api/shops', data);
     },
+    me(){
+      return instance.get('/api/shops/me');
+    },
     get(id) {
       return instance.get(`/api/shops/${id}`);
     },
@@ -101,6 +107,9 @@ const Api = {
     },
     create(data) {
       return instance.post('/api/shoppers', data);
+    },
+    me() {
+      return instance.get('/api/shoppers/me');
     },
     get(id) {
       return instance.get(`/api/shoppers/${id}`);
@@ -180,12 +189,32 @@ const Api = {
       return instance.delete(`/api/usershopphotos/${id}`);
     }
   },
+  usershopphotos: {
+    index() {
+      return instance.get('/api/usershopphotos');
+    },
+    create(data) {
+      return instance.post('/api/usershopphotos', data);
+    },
+    get(id) {
+      return instance.get(`/api/usershopphotos/${id}`);
+    },
+    update(id, data) {
+      return instance.patch(`/api/usershopphotos/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/usershopphotos/${id}`);
+    }
+  },
   shoptypes: {
     index() {
       return instance.get('/api/shoptypes');
     },
     create(data) {
       return instance.post('/api/shoptypes', data);
+    },
+    me() {
+      return instance.get('/api/shoptypes/me');
     },
     get(id) {
       return instance.get(`/api/shoptypes/${id}`);
@@ -203,6 +232,9 @@ const Api = {
     },
     create(data) {
       return instance.post('/api/communityidentities', data);
+    },
+    me() {
+      return instance.get('/api/communityidentities/me');
     },
     get(id) {
       return instance.get(`/api/communityidentities/${id}`);
