@@ -21,13 +21,10 @@ import Shoutouts from './Shoutouts/Shoutouts';
 import Badges from './Badges/Badges';
 import Kudos from './Kudos/Kudos';
 import Shoppers from './Shoppers/Shoppers';
-<<<<<<< HEAD
 import UserShopPhotos from './UserShopPhotos/UserShopPhotos';
 import BusinessOwnerSignUp from './BusinessOwnerSignUp/Welcome';
-=======
 import SignUpShopper from './SignUpShopper';
-import UserShopPhotos from './UserShopPhotos/UserShopPhotos';
->>>>>>> main
+import ShopperProfile from './ShopperProfile';
 
 function App() {
   return (
@@ -79,21 +76,21 @@ function App() {
           <AuthProtectedRoute path= "/shoutouts">
             <Shoutouts />
           </AuthProtectedRoute>
-<<<<<<< HEAD
           <AuthProtectedRoute path= "/usershopphotos">
             <UserShopPhotos />
           </AuthProtectedRoute>
           <AuthProtectedRoute path= "/welcome">
             <BusinessOwnerSignUp />
           </AuthProtectedRoute>
-=======
           <AuthProtectedRoute path= "/signupshopper">
             <SignUpShopper />
           </AuthProtectedRoute>
           <AuthProtectedRoute path= "/usershopphotos">
             <UserShopPhotos />
           </AuthProtectedRoute>
->>>>>>> main
+          <AuthProtectedRoute path= "/shopperprofile">
+            <ShopperProfile />
+          </AuthProtectedRoute>
         </Switch>
       </Router>
     </AuthContextProvider>
