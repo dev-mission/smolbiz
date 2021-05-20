@@ -35,6 +35,15 @@ router.post('/', interceptors.requireLogin, async function(req, res) {
   }
 });
 
+router.get('/me', interceptors.requireLogin, async function(req, res) {
+  const row = await req.user.getShop();
+  if (row) {
+    res.json(row);
+  } else {
+    res.status(HttpStatus.NOT_FOUND).end();
+  }
+});
+
 router.get('/:id', async function(req, res) {
   const row = await models.Shop.findByPk(req.params.id);
   if (row) {

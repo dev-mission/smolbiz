@@ -5,27 +5,17 @@ import Api from '../Api';
 //to add new component, make new file
 //to create (crud), use forms
 function BasicInfo() {
-
-    //:id from Sections.js 
     const history = useHistory();
 
     //initial value of section (in this case, obj with name, slug, and position attributes)
     const [shop, setShop] = useState({
-        shopName: '',
-        locationAddress: '',
-        websiteURL: '',
-        phoneNumber: '',
-        shopDescription: ''
-
-        
+        ownerBio: ''
     });
     const [user, setUser] = useState({
         photo: '',
         birthday: '',
-        gender: ''
-        
+        gender: ''        
     });
-
 
     //side effects, don't directly interact with output, don't refresh when it changes
     useEffect(function(){

@@ -16,6 +16,10 @@ module.exports = {
         field: 'id'
       }
     });
+    await queryInterface.addConstraint('Shops', {
+      fields: ['UserId'],
+      type: 'UNIQUE'
+    });
   },
 
   down: async (queryInterface, Sequelize) => {
@@ -26,5 +30,6 @@ module.exports = {
      * await queryInterface.dropTable('users');
      */
     await queryInterface.removeConstraint('Shops', 'Shops_UserId_Users_fk');
+    await queryInterface.removeConstraint('Shops', 'Shops_UserId_uk');
   }
 };
