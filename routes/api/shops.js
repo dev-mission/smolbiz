@@ -53,7 +53,7 @@ router.get('/:id', async function(req, res) {
   }
 });
 
-router.patch('/:id', async function(req, res) {
+router.patch('/:id', interceptors.requireLogin, async function(req, res) {
   const row = await models.Shop.findByPk(req.params.id);
   if (row) {
     try {
@@ -67,7 +67,7 @@ router.patch('/:id', async function(req, res) {
   }
 })
 
-router.delete('/:id', async function(req, res) {
+router.delete('/:id', interceptors.requireLogin, async function(req, res) {
   const row = await models.Shop.findByPk(req.params.id);
   if (row) {
     await row.destroy();
