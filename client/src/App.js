@@ -21,12 +21,13 @@ import Shoutouts from './Shoutouts/Shoutouts';
 import Badges from './Badges/Badges';
 import Kudos from './Kudos/Kudos';
 import Shoppers from './Shoppers/Shoppers';
-import UserShopPhotos from './UserShopPhotos/UserShopPhotos';
 import BusinessOwnerSignUpPg1 from './BusinessOwnerSignUp/BasicInfo';
 import BusinessOwnerSignUpPg2 from './BusinessOwnerSignUp/BusinessInfo';
 import BusinessOwnerSignUpPg3 from './BusinessOwnerSignUp/BusinessStoreFront';
 import BusinessOwnerSignUpPg4 from './BusinessOwnerSignUp/Bestsellers';
+import BusinessOwnerSignUp from './BusinessOwnerSignUp/Welcome';
 import SignUpShopper from './SignUpShopper';
+import UserShopPhotos from './UserShopPhotos/UserShopPhotos';
 
 function App() {
   return (
@@ -78,8 +79,8 @@ function App() {
           <AuthProtectedRoute path= "/shoutouts">
             <Shoutouts />
           </AuthProtectedRoute>
-          <AuthProtectedRoute path= "/usershopphotos">
-            <UserShopPhotos />
+          <AuthProtectedRoute path= "/welcome">
+            <BusinessOwnerSignUp />
           </AuthProtectedRoute>
           <AuthProtectedRoute path= "/basicinfo">
             <BusinessOwnerSignUpPg1 />
@@ -95,6 +96,9 @@ function App() {
           </AuthProtectedRoute>
           <AuthProtectedRoute path= "/signupshopper">
             <SignUpShopper />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/usershopphotos">
+            <UserShopPhotos />
           </AuthProtectedRoute>
         </Switch>
       </Router>

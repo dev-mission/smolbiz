@@ -215,6 +215,26 @@ const Api = {
       return instance.delete(`/api/shoptypes/${id}`);
     }
   },
+  communityidentities: {
+    index() {
+      return instance.get('/api/communityidentities');
+    },
+    create(data) {
+      return instance.post('/api/communityidentities', data);
+    },
+    me() {
+      return instance.get('/api/communityidentities/me');
+    },
+    get(id) {
+      return instance.get(`/api/communityidentities/${id}`);
+    },
+    update(id, data) {
+      return instance.patch(`/api/communityidentities/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/communityidentities/${id}`);
+    }
+  },
   ownershopphotos: {
     index() {
       return instance.get('/api/ownershopphotos');
