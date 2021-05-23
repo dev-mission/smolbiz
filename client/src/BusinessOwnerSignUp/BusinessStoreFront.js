@@ -8,10 +8,7 @@ function BusinessStoreFront() {
     const history = useHistory();
 
     const [shop, setShop] = useState();
-    const [ownerShopPhotos, setOwnerShopPhotos] = useState(new Array(3).fill({
-        fileImage: '',
-        caption: ''
-    }));
+    const [ownerShopPhotos, setOwnerShopPhotos] = useState([]);
 
     //side effects, don't directly interact with output, don't refresh when it changes
     useEffect(function () {

@@ -48,8 +48,8 @@ const Api = {
     }
   },
   items: {
-    index() {
-      return instance.get('/api/items');
+    index(ShopId) {
+      return instance.get('/api/items', {params: {ShopId}});
     },
     create(data) {
       return instance.post('/api/items', data);
