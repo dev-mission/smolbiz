@@ -236,8 +236,8 @@ const Api = {
     }
   },
   ownershopphotos: {
-    index() {
-      return instance.get('/api/ownershopphotos');
+    index(ShopId) {
+      return instance.get('/api/ownershopphotos', {params: {ShopId}});
     },
     create(data) {
       return instance.post('/api/ownershopphotos', data);
