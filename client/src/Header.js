@@ -64,6 +64,8 @@ function Header() {
                         <li><Link className="dropdown-item" to="/communityidentities">Community Identities</Link></li>
                         <li><Link className="dropdown-item" to="/basicinfo">Test /basicinfo</Link></li>
                         <li><Link className="dropdown-item" to="/businessinfo">Test /businessinfo</Link></li>
+                        <li><Link className="dropdown-item" to="/businessstorefront">Test /businessstorefront</Link></li>
+                        <li><Link className="dropdown-item" to="/bestsellers">Test /bestsellers</Link></li>
                         <li><hr className="dropdown-divider" /></li>
                       </>
                     )}

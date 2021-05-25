@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
 import Api from '../Api';
+import PhotoUploader from '../PhotoUploader';
 
 //to add new component, make new file
 //to create (crud), use forms
@@ -16,6 +18,7 @@ function BasicInfo() {
         birthday: '',
         gender: ''        
     });
+    const [isUploading, setUploading] = useState(false);
 
     //side effects, don't directly interact with output, don't refresh when it changes
     useEffect(function(){
@@ -40,7 +43,6 @@ function BasicInfo() {
     function onChangeUser(event) {
         //new object with current objects in section array
         const newUser = { ...user };
-
         //look for which name, and change the obj with that name with inputted 'value'
         //modify model (section)
         newUser[event.target.name] = event.target.value;
@@ -75,8 +77,14 @@ function BasicInfo() {
             <h1>Welcome to SmolBiz! Tell us more about yourself!</h1>
             <form onSubmit={onSubmit}>
                 <div className="mb-3">
-                    <label for="formFile" className="form-label">Upload a Picture of Yourself!</label>
-                    <input className="form-control" type="file" name="photo" value={user.photo} onChange={onChangeUser} id="formFile" />
+                    <label htmlFor="photo" className="form-label">Upload a Picture of Yourself!</label>
+                    <PhotoUploader className="card" id="photo" name="photo" value={user.photo} onChange={onChangeUser} onUploading={setUploading}>
+                        <div className="card-body">
+                            <div className="card-text">
+                                Drag-and-drop a photo file here, or click here to browse and select a file.
+                            </div>
+                        </div>
+                    </PhotoUploader>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Birthday:</label>
@@ -90,8 +98,7 @@ function BasicInfo() {
                     <label className="form-label">Bio:</label>
                     <input className="form-control" type="text" name="ownerBio" value={shop.ownerBio} onChange={onChangeShop} />
                 </div>
-
-                <button className="btn btn-primary" type="submit">Submit</button>
+                <button disabled={isUploading} className="btn btn-primary" type="submit">Submit</button>
             </form>
         </main>
     );

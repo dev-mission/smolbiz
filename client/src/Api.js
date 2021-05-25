@@ -39,6 +39,14 @@ const Api = {
       return instance.patch(`/api/passwords/${token}`, {password});
     }
   },
+  uploads: {
+    create(data) {
+      return instance.post('/api/uploads', data);
+    },
+    upload(url, headers, file) {
+      return instance.put(url, file, {headers});
+    }
+  },
   users: {
     me() {
       return instance.get('/api/users/me');

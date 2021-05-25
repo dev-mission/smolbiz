@@ -147,4 +147,4 @@ function BusinessInfo() {
     );
 }
 
-export default BusinessInfo; 
+export default BusinessInfo;
