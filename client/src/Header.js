@@ -1,3 +1,4 @@
+import { use } from 'passport';
 import {useEffect} from 'react';
 import {useHistory, Link} from 'react-router-dom';
 
@@ -57,6 +58,12 @@ function Header() {
                     <li><a className="dropdown-item" href="#">Profile</a></li>
                     <li><a className="dropdown-item" href="#">Settings</a></li>
                     <li><hr className="dropdown-divider" /></li>
+                    {user.isAdmin && (
+                      <>
+                        <li><Link className="dropdown-item" to="/shoptypes">Shop Types</Link></li>
+                        <li><Link className="dropdown-item" to="/communityidentities">Community Identities</Link></li>
+                      </>
+                    )}
                     <li><a className="dropdown-item" href="/logout" onClick={onLogout}>Log out</a></li>
                   </ul>
                 </li>

@@ -31,7 +31,8 @@ module.exports = (sequelize, DataTypes) => {
         'id',
         'firstName',
         'lastName',
-        'email'
+        'email',
+        'isAdmin'
       ]);
     }
 
