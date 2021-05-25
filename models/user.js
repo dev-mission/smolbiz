@@ -29,10 +29,15 @@ module.exports = (sequelize, DataTypes) => {
     toJSON() {
       return _.pick(this.get(), [
         'id',
+        'isAdmin',
         'firstName',
+        'middleName',
         'lastName',
         'email',
-        'isAdmin'
+        'username',
+        'photo',
+        'birthday',
+        'gender'
       ]);
     }
 

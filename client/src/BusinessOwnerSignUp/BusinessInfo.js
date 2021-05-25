@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Api from '../Api';
 
@@ -15,98 +15,83 @@ function BusinessInfo() {
         locationAddress: '',
         websiteURL: '',
         phoneNumber: '',
-        shopDescription: ''
+        shopDescription: '',
+        ShopTypes: [],
+        CommunityIdentities: []
     });
-    // const [communityidentity, setCommunityIdentity] = useState({
-    //     identities: ''
-
-        
-    // });
-    // const [shoptype, setShopType] = useState({
-    //     typeOfStore: ''
-
-        
-    // });
+    const [communityIdentities, setCommunityIdentities] = useState([]);
+    const [shopTypes, setShopTypes] = useState([]);
 
     //side effects, don't directly interact with output, don't refresh when it changes
     useEffect(function(){
-        // Api.shops.me().then((response) => setShop(response.data));
-        // Api.communityidentities.me().then((response) => setCommunityIdentity(response.data));
-        // Api.shoptypes.me().then((response) => setShopType(response.data));
         Api.shops.me().then((response) => {
             if (response.status === 200) {
                 setShop(response.data);
-            }});
-        // Api.communityidentities.me().then((response) => {
-        //     if (response.status === 200) {
-        //         setCommunityIdentity(response.data);
-        //     }});
-        // Api.shoptypes.me().then((response) => {
-        //     if (response.status === 200) {
-        //         setShopType(response.data);
-        //     }
-        // });
+            }
+        });
+        Api.communityidentities.index().then((response) => setCommunityIdentities(response.data));
+        Api.shoptypes.index().then((response) => setShopTypes(response.data));
     }, []);
 
     function onChangeShop(event) {
-
         //new object with current objects in section array
         const newShop = { ...shop };
-
         //look for which name, and change the obj with that name with inputted 'value'
         //modify model (section)
         newShop[event.target.name] = event.target.value;
         setShop(newShop);
     }
 
-    // function onChangeCommunityIdentity(event) {
+    function hasShopType(shopTypeId) {
+        for (const shopType of shop.ShopTypes) {
+            if (shopType.id === parseInt(shopTypeId)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-    //     //new object with current objects in section array
-    //     const newCommunityIdentity = { ...communityidentity };
+    function onChangeShopType(event) {
+        const newShop = { ...shop };
+        if (hasShopType(event.target.value)) {
+            newShop.ShopTypes = newShop.ShopTypes.filter((shopType) => shopType.id !== parseInt(event.target.value))
+        } else {
+            newShop.ShopTypes.push({id: parseInt(event.target.value)});
+        }
+        setShop(newShop);
+    }
 
-    //     //look for which name, and change the obj with that name with inputted 'value'
-    //     //modify model (section)
-    //     newCommunityIdentity[event.target.name] = event.target.value;
-    //     setCommunityIdentity(newCommunityIdentity);
-    // }
+    function hasCommunityIdentity(communityIdentityId) {
+        for (const communityIdentity of shop.CommunityIdentities) {
+            if (communityIdentity.id === parseInt(communityIdentityId)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-    // function onChangeShopType(event) {
+    function onChangeCommunityIdentity(event) {
+        const newShop = { ...shop };
+        if (hasCommunityIdentity(event.target.value)) {
+            newShop.CommunityIdentities = newShop.CommunityIdentities.filter((communityIdentity) => communityIdentity.id !== parseInt(event.target.value))
+        } else {
+            newShop.CommunityIdentities.push({id: parseInt(event.target.value)});
+        }
+        setShop(newShop);
+    }
 
-    //     //new object with current objects in section array
-    //     const newShopType = { ...shoptype };
-
-    //     //look for which name, and change the obj with that name with inputted 'value'
-    //     //modify model (section)
-    //     newShopType[event.target.name] = event.target.value;
-    //     setShopType(newShopType);
-    // }
-    
     //async function execute (multitasking) js continue running when server connects
     async function onSubmit(event) {
         event.preventDefault();
 
         //might cause ownershopphoto
         try {
-
             //update
             if (shop.id) {
                 await Api.shops.update(shop.id, shop);
             } else {
                 await Api.shops.create(shop);
             };
-
-            // if (communityidentity.id) {
-            //     await Api.communityidentities.update(communityidentity.id, communityidentity);
-            // } else {
-            //     await Api.communityidentities.create(communityidentity);
-            // };
-
-            // if (shoptype.id) {
-            //     await Api.shoptypes.update(shoptype.id, shoptype);
-            // } else {
-            //     await Api.shoptypes.create(shoptype);
-            // }
-
             //add to browser history,, aka go to /sections
             history.push('/businessstorefront');
         } catch (error) {
@@ -138,14 +123,24 @@ function BusinessInfo() {
                     <label className="form-label">Why did you start your business?</label>
                     <input className="form-control" type="text" name="shopDescription" value={shop.shopDescription} onChange={onChangeShop} />
                 </div>
-                {/* <div className="mb-3">
+                <div className="mb-3">
                     <label className="form-label">Type of Business:</label>
-                    <input className="form-control" type="text" name="typeOfStore" value={shoptype.typeOfStore} onChange={onChangeShopType} />
+                    <div>
+                        {shopTypes.map((st) => <React.Fragment key={st.id}>
+                            <input type="checkbox" className="btn-check" id={`ShopTypes[${st.id}]`} checked={hasShopType(st.id)} onChange={onChangeShopType} value={st.id} autoComplete="off" />
+                            <label className="btn btn-outline-primary me-2" htmlFor={`ShopTypes[${st.id}]`}>{st.typeOfStore}</label>
+                        </React.Fragment>)}
+                    </div>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Communities you identify with:</label>
-                    <input className="form-control" type="text" name="identities" value={communityidentity.identities} onChange={onChangeCommunityIdentity} />
-                </div> */}
+                    <div>
+                        {communityIdentities.map((ci) => <React.Fragment key={ci.id}>
+                            <input type="checkbox" className="btn-check" id={`CommunityIdentities[${ci.id}]`} checked={hasCommunityIdentity(ci.id)} onChange={onChangeCommunityIdentity} value={ci.id} autoComplete="off" />
+                            <label className="btn btn-outline-primary me-2" htmlFor={`CommunityIdentities[${ci.id}]`}>{ci.identity}</label>
+                        </React.Fragment>)}
+                    </div>
+                </div>
                 <button className="btn btn-primary" type="submit">Submit</button>
             </form>
         </main>

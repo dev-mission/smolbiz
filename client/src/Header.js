@@ -62,6 +62,9 @@ function Header() {
                       <>
                         <li><Link className="dropdown-item" to="/shoptypes">Shop Types</Link></li>
                         <li><Link className="dropdown-item" to="/communityidentities">Community Identities</Link></li>
+                        <li><Link className="dropdown-item" to="/basicinfo">Test /basicinfo</Link></li>
+                        <li><Link className="dropdown-item" to="/businessinfo">Test /businessinfo</Link></li>
+                        <li><hr className="dropdown-divider" /></li>
                       </>
                     )}
                     <li><a className="dropdown-item" href="/logout" onClick={onLogout}>Log out</a></li>

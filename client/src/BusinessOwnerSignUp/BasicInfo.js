@@ -74,9 +74,9 @@ function BasicInfo() {
         <main className="container">
             <h1>Welcome to SmolBiz! Tell us more about yourself!</h1>
             <form onSubmit={onSubmit}>
-                <div class="mb-3">
-                    <label for="formFile" class="form-label">Upload a Picture of Yourself!</label>
-                    <input class="form-control" type="file" name="photo" value={user.photo} onChange={onChangeUser} id="formFile" />
+                <div className="mb-3">
+                    <label for="formFile" className="form-label">Upload a Picture of Yourself!</label>
+                    <input className="form-control" type="file" name="photo" value={user.photo} onChange={onChangeUser} id="formFile" />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Birthday:</label>
