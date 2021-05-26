@@ -35,6 +35,17 @@ router.post('/', interceptors.requireLogin, async function(req, res) {
   }
 });
 
+router.get('/me', interceptors.requireLogin, async function(req, res) {
+  const row = await req.user.getShop({
+    include: [models.ShopType, models.CommunityIdentity]
+  });
+  if (row) {
+    res.json(row);
+  } else {
+    res.status(HttpStatus.NO_CONTENT).end();
+  }
+});
+
 router.get('/:id', async function(req, res) {
   const row = await models.Shop.findByPk(req.params.id);
   if (row) {
@@ -44,21 +55,39 @@ router.get('/:id', async function(req, res) {
   }
 });
 
-router.patch('/:id', async function(req, res) {
-  const row = await models.Shop.findByPk(req.params.id);
-  if (row) {
-    try {
-      await row.update(req.body);
-      res.status(HttpStatus.OK).end();  
-    } catch (error) {
-      res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);
+router.patch('/:id', interceptors.requireLogin, async function(req, res) {
+  await models.sequelize.transaction(async (transaction) => {
+    const row = await models.Shop.findByPk(req.params.id, {transaction});
+    if (row) {
+      try {
+        await row.update(req.body, {transaction});
+        if (req.body.CommunityIdentities) {
+          await row.setCommunityIdentities(await models.CommunityIdentity.findAll({
+            where: {
+              id: req.body.CommunityIdentities.map((ci) => ci.id)
+            },
+            transaction
+          }), {transaction});
+        }
+        if (req.body.ShopTypes) {
+          await row.setShopTypes(await models.ShopType.findAll({
+            where: {
+              id: req.body.ShopTypes.map((st) => st.id)
+            },
+            transaction
+          }), {transaction});
+        }
+        res.status(HttpStatus.OK).end();
+      } catch (error) {
+        res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);
+      }
+    } else {
+      res.status(HttpStatus.NOT_FOUND).end();
     }
-  } else {
-    res.status(HttpStatus.NOT_FOUND).end();
-  }
-})
+  });
+});
 
-router.delete('/:id', async function(req, res) {
+router.delete('/:id', interceptors.requireLogin, async function(req, res) {
   const row = await models.Shop.findByPk(req.params.id);
   if (row) {
     await row.destroy();

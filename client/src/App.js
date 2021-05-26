@@ -21,9 +21,13 @@ import Shoutouts from './Shoutouts/Shoutouts';
 import Badges from './Badges/Badges';
 import Kudos from './Kudos/Kudos';
 import Shoppers from './Shoppers/Shoppers';
-import UserShopPhotos from './UserShopPhotos/UserShopPhotos';
+import BusinessOwnerSignUpPg1 from './BusinessOwnerSignUp/BasicInfo';
+import BusinessOwnerSignUpPg2 from './BusinessOwnerSignUp/BusinessInfo';
+import BusinessOwnerSignUpPg3 from './BusinessOwnerSignUp/BusinessStoreFront';
+import BusinessOwnerSignUpPg4 from './BusinessOwnerSignUp/Bestsellers';
 import BusinessOwnerSignUp from './BusinessOwnerSignUp/Welcome';
 import SignUpShopper from './SignUpShopper';
+import UserShopPhotos from './UserShopPhotos/UserShopPhotos';
 import ShopperProfile from './ShopperProfile';
 
 function App() {
@@ -76,11 +80,20 @@ function App() {
           <AuthProtectedRoute path= "/shoutouts">
             <Shoutouts />
           </AuthProtectedRoute>
-          <AuthProtectedRoute path= "/usershopphotos">
-            <UserShopPhotos />
-          </AuthProtectedRoute>
           <AuthProtectedRoute path= "/welcome">
             <BusinessOwnerSignUp />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/basicinfo">
+            <BusinessOwnerSignUpPg1 />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/businessinfo">
+            <BusinessOwnerSignUpPg2 />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/businessstorefront">
+            <BusinessOwnerSignUpPg3 />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/bestsellers">
+            <BusinessOwnerSignUpPg4 />
           </AuthProtectedRoute>
           <AuthProtectedRoute path= "/signupshopper">
             <SignUpShopper />

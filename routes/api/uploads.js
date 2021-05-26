@@ -1,10 +1,10 @@
 'use strict';
 
 const express = require('express');
-const router = express.Router();
 
 const AWS = require('aws-sdk');
 const fs = require('fs');
+const HttpStatus = require('http-status-codes');
 const mime = require('mime-types');
 const mkdirp = require('mkdirp');
 const path = require('path');
@@ -12,6 +12,8 @@ const uuid = require('uuid/v4');
 
 const models = require('../../models');
 const interceptors = require('../interceptors');
+
+const router = express.Router();
 
 router.post('/', interceptors.requireLogin, function(req, res, next) {
   const id = uuid();
@@ -56,9 +58,9 @@ router.put('/:id', interceptors.requireLogin, function(req, res, next) {
   mkdirp.sync(tmpDir);
   fs.writeFile(path.resolve(tmpDir, `${req.params.id}.${mime.extension(req.get('Content-Type'))}`), req.body, function(err) {
     if (err) {
-      res.sendStatus(500);
+      res.status(HttpStatus.INTERNAL_SERVER_ERROR).end();
     } else {
-      res.sendStatus(200);
+      res.status(HttpStatus.OK).end();
     }
   });
 });

@@ -12,8 +12,7 @@ function CommunityIdentityForm() {
 
     //initial value of section (in this case, obj with name, slug, and position attributes)
     const [communityidentity, setCommunityIdentity] = useState({
-        identities: '',
-        ShopID: ''
+        identity: '',
     });
 
     //side effects, don't directly interact with output, don't refresh when it changes
@@ -60,11 +59,7 @@ function CommunityIdentityForm() {
             <form onSubmit={onSubmit}>
                 <div className="mb-3">
                     <label className="form-label">CommunityIdentities</label>
-                    <input className="form-control" type="text" name="identities" value={communityidentity.identities} onChange={onChange} />
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">ShopID</label>
-                    <input className="form-control" type="text" name="ShopID" value={communityidentity.ShopID} onChange={onChange} />
+                    <input className="form-control" type="text" name="identity" value={communityidentity.identity} onChange={onChange} />
                 </div>
                 <button className="btn btn-primary" type="submit">Submit</button>
             </form>

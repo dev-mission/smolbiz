@@ -9,9 +9,13 @@ const models = require('../../models');
 
 //controller, application logic that sends data based on request
 router.get('/', async function(req, res) {
+  const options = {};
+  if (req.query.ShopId) {
+    options.where = { ShopId: req.query.ShopId };
+  }
   //request data from user/network 
   //decide response- json data that is in an array
-  const rows = await models.Item.findAll();
+  const rows = await models.Item.findAll(options);
   res.json(rows);
 });
 
