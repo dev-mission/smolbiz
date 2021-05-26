@@ -1,3 +1,4 @@
+import './ShopperProfile.css'
 function ShopperProfile() {
   return (
     <main className="container">
@@ -56,9 +57,9 @@ function ShopperProfile() {
           </div>
           </div>
 
-          <div class="col-md-7 offset-md-1">
+          <div class="col-md-7 offset-md-1" id="list-view">
               <h1>Your Favorite Store</h1>
-              <div class="card mb-3" style={{"max-width": "540px"}}>
+              <div class="card mb-3" id= "card" style={{"max-width": "540px"}}>
               <div class="row g-0">
                   <div class="col-md-3">
                   <a href="https://placeholder.com"><img src="https://via.placeholder.com/130"/></a>
