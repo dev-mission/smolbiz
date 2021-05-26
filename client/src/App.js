@@ -28,6 +28,7 @@ import BusinessOwnerSignUpPg4 from './BusinessOwnerSignUp/Bestsellers';
 import BusinessOwnerSignUp from './BusinessOwnerSignUp/Welcome';
 import SignUpShopper from './SignUpShopper';
 import UserShopPhotos from './UserShopPhotos/UserShopPhotos';
+import ShopperProfile from './ShopperProfile';
 
 function App() {
   return (
@@ -99,6 +100,9 @@ function App() {
           </AuthProtectedRoute>
           <AuthProtectedRoute path= "/usershopphotos">
             <UserShopPhotos />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path= "/shopperprofile">
+            <ShopperProfile />
           </AuthProtectedRoute>
         </Switch>
       </Router>
