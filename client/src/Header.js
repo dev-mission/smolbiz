@@ -1,3 +1,4 @@
+import './Header.css';
 import { use } from 'passport';
 import {useEffect} from 'react';
 import {useHistory, Link} from 'react-router-dom';
@@ -28,7 +29,7 @@ function Header() {
   };
 
   return (
-    <nav className="navbar navbar-expand-md navbar-light bg-light fixed-top">
+    <nav className="navbar navbar-expand-md navbar-light fixed-top">
       <div className="container">
         <Link className="navbar-brand mb-0 h1" to="/">SmolBiz</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
