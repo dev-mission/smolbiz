@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.hasMany(models.Item);
-      User.hasMany(models.Shop);
+      User.hasOne(models.Shop);
       User.hasOne(models.Shopper);
     }
 
@@ -29,9 +29,15 @@ module.exports = (sequelize, DataTypes) => {
     toJSON() {
       return _.pick(this.get(), [
         'id',
+        'isAdmin',
         'firstName',
+        'middleName',
         'lastName',
-        'email'
+        'email',
+        'username',
+        'photo',
+        'birthday',
+        'gender'
       ]);
     }
 

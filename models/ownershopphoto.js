@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      OwnerShopPhoto.belongsTo(models.Shop);
     }
   };
   OwnerShopPhoto.init({
-    ShopId: DataTypes.INTEGER,
     fileImage: DataTypes.STRING,
     caption: DataTypes.STRING
   }, {

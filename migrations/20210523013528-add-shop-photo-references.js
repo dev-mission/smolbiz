@@ -8,17 +8,13 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    await queryInterface.addConstraint('Shops', {
-      fields: ['UserId'],
+    await queryInterface.addConstraint('OwnerShopPhotos', {
+      fields: ['ShopId'],
       type: 'FOREIGN KEY',
       references: {
-        table: 'Users',
+        table: 'Shops',
         field: 'id'
       }
-    });
-    await queryInterface.addConstraint('Shops', {
-      fields: ['UserId'],
-      type: 'UNIQUE'
     });
   },
 
@@ -29,7 +25,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.removeConstraint('Shops', 'Shops_UserId_Users_fk');
-    await queryInterface.removeConstraint('Shops', 'Shops_UserId_uk');
+    await queryInterface.removeConstraint('OwnerShopPhotos', 'OwnerShopPhotos_ShopId_Shops_fk');
   }
 };

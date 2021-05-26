@@ -1,4 +1,5 @@
 import './Header.css';
+import { use } from 'passport';
 import {useEffect} from 'react';
 import {useHistory, Link} from 'react-router-dom';
 
@@ -48,7 +49,6 @@ function Header() {
             <li className="nav-item active">
               <Link className="nav-link" aria-current="page" to="/AboutUs">About Us</Link>
             </li>
-  
             <div className="flex-grow-1 d-flex justify-content-end">
               {user && (
                 <li className="nav-item dropdown">
@@ -57,8 +57,19 @@ function Header() {
                   </a>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a className="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a className="dropdown-item" href="#">Settings</a></li>
                     <li><hr className="dropdown-divider" /></li>
+                    {user.isAdmin && (
+                      <>
+                        <li><Link className="dropdown-item" to="/shoptypes">Shop Types</Link></li>
+                        <li><Link className="dropdown-item" to="/communityidentities">Community Identities</Link></li>
+                        <li><Link className="dropdown-item" to="/basicinfo">Test /basicinfo</Link></li>
+                        <li><Link className="dropdown-item" to="/businessinfo">Test /businessinfo</Link></li>
+                        <li><Link className="dropdown-item" to="/businessstorefront">Test /businessstorefront</Link></li>
+                        <li><Link className="dropdown-item" to="/bestsellers">Test /bestsellers</Link></li>
+                        <li><hr className="dropdown-divider" /></li>
+                      </>
+                    )}
                     <li><a className="dropdown-item" href="/logout" onClick={onLogout}>Log out</a></li>
                   </ul>
                 </li>

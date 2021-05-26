@@ -13,9 +13,12 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Shop.belongsTo(models.User);
       Shop.hasMany(models.Item);
+      Shop.hasMany(models.OwnerShopPhoto);
+      Shop.belongsToMany(models.ShopType, { through: "ShopShopTypes" });
+      Shop.belongsToMany(models.CommunityIdentity, { through: "ShopCommunityIdentities" });
     }
   };
-  Shop.init({
+    Shop.init({
     phoneNumber: DataTypes.STRING,
     shopName: DataTypes.STRING,
     websiteURL: DataTypes.STRING,

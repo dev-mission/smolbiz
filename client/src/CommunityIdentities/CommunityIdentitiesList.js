@@ -32,7 +32,7 @@ function CommunityIdentitiesList() {
             <ul>
                 {communityidentities.map(s => (
                     <li key={s.id}>
-                        <p><Link to={`/communityidentities/${s.id}/edit`}>{s.identities}</Link></p>
+                        <p><Link to={`/communityidentities/${s.id}/edit`}>{s.identity}</Link></p>
                         <p> <button onClick={() => onDelete(s)} type="button" className="btn btn-sm btn-danger">Delete</button></p>
                     </li>
                 ))}
