@@ -36,11 +36,11 @@ function Register() {
       authContext.setUser(response.data);
       if (userType === "BusinessOwner") {
         //replace / with where Business Owners are to be directed
-        history.push('/login', { flash: 'Your account has been created!' });
+        history.push('/basicinfo', { flash: 'Your account has been created!' });
       }
       else if (userType === "Shopper") {
         //replace / with where Shoppers are to be directed
-        history.push('/', { flash: 'Your account has been created!' });
+        history.push('/signupshopper', { flash: 'Your account has been created!' });
       }
       else {
         //idk if this is right

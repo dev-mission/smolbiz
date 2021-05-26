@@ -13,7 +13,6 @@ function ShopTypeForm() {
     //initial value of section (in this case, obj with name, slug, and position attributes)
     const [shopType, setShopType] = useState({
         typeOfStore: '',
-        ShopID: ''
     });
 
     //side effects, don't directly interact with output, don't refresh when it changes
@@ -61,10 +60,6 @@ function ShopTypeForm() {
                 <div className="mb-3">
                     <label className="form-label">typeOfStore</label>
                     <input className="form-control" type="text" name="typeOfStore" value={shopType.typeOfStore} onChange={onChange} />
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">ShopID</label>
-                    <input className="form-control" type="text" name="ShopID" value={shopType.ShopID} onChange={onChange} />
                 </div>
                 <button className="btn btn-primary" type="submit">Submit</button>
             </form>

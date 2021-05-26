@@ -1,0 +1,81 @@
+body{
+    padding-top: 5rem;
+    font-family: 'Merriweather', serif;
+}
+
+
+.banner{
+    padding: 0px;
+    overflow: hidden; 
+    height: 100%;
+}
+
+
+.carousel-title{
+    background-color: rgba(255, 230, 156, 0.99);
+    color: black;
+    font-weight: bold;
+    width: 50%;
+}
+.carousel-blurb{
+    background-color: rgba(255, 230, 156, 0.75);
+    color: black;
+    font-weight: bold;
+}
+
+
+.community-identity{
+    background-color: rgba(255, 230, 156, 0.75);
+    color: black;
+}
+
+a{
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.badge{
+    border: none;
+}
+
+.subtitle{
+    font-weight: bolder;
+}
+
+.btn-primary {
+    background-color: rgba(255, 230, 156, 0.99);
+    color: black;
+    border-color: rgba(255, 230, 156, 0.50);
+    border-radius: 20;
+}
+.btn-primary:hover{
+    background-color: rgba(255, 230, 156, 0.99);
+    color: black;
+    border-color: rgba(255, 230, 156, 0.50);
+    border-radius: 20;
+    font-weight: bolder;
+}
+
+.shoutout{
+    background-color: rgba(255, 230, 156, 0.90);
+}
+.shoutout-title{
+    color: black;
+    font-weight: bolder;
+}
+.shoutout-text{
+    color: black;
+    font-style: italic;
+}
+.btn-main-search{
+    background: #17A2B8;
+    border: 1px solid #CED4DA;
+    box-sizing: border-box;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+}
+.input-main-search{
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

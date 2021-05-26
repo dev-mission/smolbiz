@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   FavoriteCommunityIdentity.init({
-    CommunityIdentitiesID: DataTypes.INTEGER,
+    CommunityIdentityId: DataTypes.INTEGER,
     ShopperId: DataTypes.INTEGER
   }, {
     sequelize,
