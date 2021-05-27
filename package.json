@@ -33,7 +33,6 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pg": "^8.5.1",
-    "react-dropzone": "file:node_modules/react-dropzone",
     "sequelize": "^6.3.5",
     "sequelize-cli": "^6.2.0",
     "sequelize-paginate": "^1.1.6",
