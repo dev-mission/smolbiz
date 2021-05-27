@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     toJSON() {
-      return _.pick(this.get(), [
+      const data = _.pick(this.get(), [
         'id',
         'isAdmin',
         'firstName',
@@ -39,6 +39,10 @@ module.exports = (sequelize, DataTypes) => {
         'birthday',
         'gender'
       ]);
+      if (process.env.AWS_S3_BUCKET && data.photo) {
+        data.photo = `${process.env.AWS_S3_BASE_URL}/${data.photo}`;
+      }
+      return data;
     }
 
     hashPassword(password, options) {

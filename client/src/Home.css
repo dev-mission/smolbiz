@@ -56,7 +56,11 @@ a{
     border-radius: 20;
     font-weight: bolder;
 }
-
+.card-image-ci{
+    height: 200px;
+    overflow: hidden;
+    object-fit: cover;
+}
 .shoutout{
     background-color: rgba(255, 230, 156, 0.90);
 }
@@ -78,4 +82,14 @@ a{
 .input-main-search{
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.shoutout-img{
+    height: 250px;
+    width: 185px;
+    overflow: hidden;
+    object-fit: cover;
+}
+.image-winner{
+    border: 1px;
+    border-color: rgba(255, 230, 156, 0.99);
 }

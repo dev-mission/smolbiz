@@ -1,0 +1,55 @@
+body{
+    padding-top: 5rem;
+    font-family: 'Merriweather', serif;
+}
+/*Shop title*/
+.shop-title{
+    margin: 40px 0 20px 0;
+}
+
+/*shoutout, given shoutouts, and share buttons*/
+.yellow-button{
+    background-color: #FFC107;
+    border-color: #FFC107;
+    color: black;
+  }
+.yellow-button:hover{
+    background-color: #ffda6a;
+    border-color: #ffda6a;
+    color: black;
+}
+.bi-emoji-sunglasses{
+    margin-top: 11px;
+}
+
+/*owner bio card*/
+.owner-card{
+    background-color: #ffda6a;
+}
+.card-title{
+    margin-bottom: 25px;
+}
+
+/*shop basic info*/
+.shop-links{
+    border-color: #ffda6a;
+}
+.shop-links:hover{
+    background-color: #ffda6a;
+    border-color: #ffda6a;
+    color: black;
+}
+.shop-hours{
+    border-color: #ffda6a;
+}
+.shop-hours:hover{
+    background-color: white;
+    border-color: #ffda6a;
+    color: black;
+}
+
+/*card color*/
+.yellow-theme{
+    background-color: rgba(255, 230, 156, 0.75);
+    color: black;
+}

@@ -77,7 +77,7 @@ function Home() {
       <div className="row justify-content-center">
         <div className="col-md-3" >
           <div class="card d-inline-block community-identity" style={{'width':'20rem'}} >
-            <img src="https://via.placeholder.com/100x75" className="card-img-top" alt="..." />
+            <img src="https://drive.google.com/uc?id=1g8WtPWgZu3EODTRJZ4_5CA35PqQgy8nD" className="card-img-top card-image-ci" alt="..." />
             <div class="card-body">
               <a href='#' className="link-dark"><p className="card-title d-flex justify-content-center">Black-Owned Businesses</p></a>
             </div>
@@ -85,7 +85,7 @@ function Home() {
         </div>
         <div className="col-md-3">
           <div class="card d-inline-block community-identity" style={{'width':'20rem'}} >
-            <img src="https://via.placeholder.com/100x75" className="card-img-top" alt="..." />
+            <img src="https://assets.entrepreneur.com/slideshow/20190806200349-ent19-sept-youngmill-brandon.jpeg?width=1000" className="card-img-top card-image-ci" alt="..." />
             <div class="card-body">
               <a href='#' className="link-dark"><p className="card-title d-flex justify-content-center">Youth-Owned Businesses</p></a>
             </div>
@@ -93,9 +93,9 @@ function Home() {
         </div>
         <div className="col-md-3">
           <div class="card d-inline-block community-identity" style={{'width':'20rem'}}>
-            <img src="https://via.placeholder.com/100x75" className="card-img-top" alt="..." />
+            <img src="https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F6088823192aa511a8812768e%2F0x0.jpg" className="card-img-top card-image-ci" alt="..." />
             <div class="card-body">
-              <a href='#' className="link-dark"><p className="card-title d-flex justify-content-center">Asian-Owned Businesses</p></a>
+              <a href='#' className="link-dark"><p className="card-title d-flex justify-content-center">AAPI-Owned Businesses</p></a>
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@ function Home() {
       <div className="row justify-content-center">
         <div className="col-md-3" >
           <div class="card d-inline-block community-identity" style={{'width':'20rem'}}>
-            <img src="https://via.placeholder.com/100x75" className="card-img-top" alt="..." />
+            <img src="https://pbs.twimg.com/media/EuDTAY_U0AAdzQb.jpg" className="card-img-top card-image-ci" alt="..." />
             <div class="card-body">
               <a href='#' className="link-dark"><p className="card-title d-flex justify-content-center">LGBTQIA-Owned Businesses</p></a>
             </div>
@@ -115,7 +115,7 @@ function Home() {
         </div>
         <div className="col-md-3">
           <div class="card d-inline-block community-identity" style={{'width':'20rem'}}>
-            <img src="https://via.placeholder.com/100x75" className="card-img-top" alt="..." />
+            <img src="https://drive.google.com/uc?id=1uq5qiJdpOk2AclzAqkCxM9PbFKfb484A" className="card-img-top card-image-ci" alt="..." />
             <div class="card-body">
               <a href='#' className="link-dark"><p className="card-title d-flex justify-content-center">Hispanic-Owned Businesses</p></a>
             </div>
@@ -123,7 +123,7 @@ function Home() {
         </div>
         <div className="col-md-3">
           <div class="card d-inline-block community-identity" style={{'width':'20rem'}}>
-            <img src="https://via.placeholder.com/100x75" className="card-img-top" alt="..." />
+            <img src="https://drive.google.com/uc?id=1ip2TTEhwc72tnN4NP2xS-C4JTMPQtOdI" className="card-img-top card-image-ci" alt="..." />
             <div class="card-body">
               <a href='#' className="link-dark"><p className="card-title d-flex justify-content-center">Female-Owned Businesses</p></a>
             </div>
@@ -137,32 +137,34 @@ function Home() {
       </div>
       <div className="row d-flex justify-content-center">
         <div className="col-md-5 m-2">
-          <div class="card mb-3 shoutout">
+        <a href="https://dm-smolbiz.herokuapp.com/shopprofile">
+          <div class="card mb-3 shoutout" >
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="https://via.placeholder.com/150x250" alt="..." />
+                <img src="https://hgtvhome.sndimg.com/content/dam/images/grdn/fullset/2014/2/26/0/img-9193.JPG.rend.hgtvcom.966.725.suffix/1452659786303.jpeg" alt="..." className="shoutout-img"/>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title shoutout-title">Shoutout title</h5>
-                  <p class="card-text shoutout-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  <h5 class="card-title shoutout-title">Oasis Garden Supplies</h5>
+                  <p class="card-text shoutout-text">“I always find something special here and James makes sure I know how to care for my new plants. Everything is homegrown and most definitely a steal for its price!”</p>
+                  <p class="card-text"><small class="text-muted">@suzyannsf</small></p>
                 </div>
               </div>
             </div>
           </div>
+          </a>
         </div>
         <div className="col-md-5">
           <div class="card mb-3 shoutout" >
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="https://via.placeholder.com/150x250" alt="..." />
+                <img src="https://s3-media0.fl.yelpcdn.com/bphoto/t7cmv44-mxI_mnKXsXvoFA/ls.jpg" alt="..." className="shoutout-img"/>
               </div>
               <div class="col-md-8">
                 <div class="card-body ">
-                  <h5 class="card-title shoutout-title">Shoutout title</h5>
-                  <p class="card-text shoutout-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  <h5 class="card-title shoutout-title">Eado Car Wash</h5>
+                  <p class="card-text shoutout-text">"Whenever I feel like treating myself, I come here, where I know Jason Eado will take good care of me and Bobby, my 2000 VW buggy. He's always around for a chat, and you can't leave without a smile on your face."</p>
+                  <p class="card-text"><small class="text-muted">@bobbyandme</small></p>
                 </div>
               </div>
             </div>
@@ -174,13 +176,13 @@ function Home() {
           <div class="card mb-3 shoutout">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="https://via.placeholder.com/150x250" alt="..." />
+                <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQGou9w8g3wwFQ/company-logo_200_200/0/1587402105280?e=2159024400&v=beta&t=h7d3DTXEYmBO4tZuHAf50X6o5JQh2JW52eIlzDMRxqM" alt="..." className="shoutout-img"/>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title shoutout-title">Shoutout title</h5>
-                  <p class="card-text shoutout-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  <h5 class="card-title shoutout-title">Unity Tutors</h5>
+                  <p class="card-text shoutout-text">"Wow! My son in fourth grade is already excelling in pre-algebra, thanks to the team at Unity Tutors! As recent high school graduates themselves, the connection and bond they are able to form is amazing!"</p>
+                  <p class="card-text"><small class="text-muted">@helicopmom</small></p>
                 </div>
               </div>
             </div>
@@ -190,13 +192,13 @@ function Home() {
           <div class="card mb-3 shoutout" >
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="https://via.placeholder.com/150x250" alt="..." />
+                <img src="https://www.dailynews.com/wp-content/uploads/2021/04/LDN-L-AMOEBA-0323-04-1.jpg" alt="..." className="shoutout-img"/>
               </div>
               <div class="col-md-8">
                 <div class="card-body ">
-                  <h5 class="card-title shoutout-title">Shoutout title</h5>
-                  <p class="card-text shoutout-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  <h5 class="card-title shoutout-title">Amoeba Music</h5>
+                  <p class="card-text shoutout-text">"The records are well kept, and the store is very clean. They have such a diverse collection. I found a copy of the Taylor Swift's new album folklore on vinyl and bought Is This It from the Strokes on vinyl, as well."</p>
+                  <p class="card-text"><small class="text-muted">@tswiftyfan89</small></p>
                 </div>
               </div>
             </div>
@@ -221,7 +223,7 @@ function Home() {
       <div className="row justify-content-center">
         <div className="offset-1 col-md-5 d-flex flex-column align-items-center">
         <div class="card text-center d-flex border-0" style={{'width':'15rem'}}>
-              <img src="https://via.placeholder.com/50" class="rounded-circle " alt="..." />
+              <img src="https://www.corporatephotographylondon.com/wp-content/uploads/2019/11/HKstrategies-1210.jpg" class="rounded-circle image-winner" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Socially-Concious Sarah</h5>
                 <p class="card-text">1000 points</p>
@@ -262,14 +264,14 @@ function Home() {
         <div className='col-md-5'>
           <div className='row'>
             <div class="card border-0 text-center" id='badge' style={{'width':'15rem'}}>
-              <img src="https://via.placeholder.com/50" class="rounded-circle" alt="..." />
+              <img src="https://www.iconpacks.net/icons/1/free-badge-icon-1355-thumb.png" class="rounded-circle" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Super-Shopper Award</h5>
                 <p class="card-text">100 Shoutouts Given</p>
               </div>
             </div>
             <div class="card border-0 text-center" id='badge' style={{'width':'15rem'}}>
-              <img src="https://via.placeholder.com/50" class=" rounded-circle" alt="..." />
+              <img src="https://www.iconpacks.net/icons/1/free-badge-icon-1355-thumb.png" class=" rounded-circle" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Super-Supporter Award</h5>
                 <p class="card-text">100 Kudos Given</p>
@@ -277,14 +279,14 @@ function Home() {
             </div>
             <div className='row'>
               <div class="card border-0 text-center" id='badge' style={{'width':'15rem'}}>
-                <img src="https://via.placeholder.com/50" class="rounded-circle" alt="..." />
+                <img src="https://www.iconpacks.net/icons/1/free-badge-icon-1355-thumb.png" class="rounded-circle" alt="..." />
                 <div class="card-body">
                   <h5 class="card-title">Super-Reviewer Award</h5>
                   <p class="card-text">100 Kudos Received</p>
                 </div>
               </div>
               <div class="card border-0 text-center" id='badge' style={{'width':'15rem'}}>
-                <img src="https://via.placeholder.com/50" class=" rounded-circle" alt="..." />
+                <img src="https://www.iconpacks.net/icons/1/free-badge-icon-1355-thumb.png" class=" rounded-circle" alt="..." />
                 <div class="card-body">
                   <h5 class="card-title">Super-Influencer Award</h5>
                   <p class="card-text">100 Followers</p>
