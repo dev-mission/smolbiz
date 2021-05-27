@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
         'gender'
       ]);
       if (process.env.AWS_S3_BUCKET) {
-        data.photo = `${process.env.AWS_S3_BASE_URL}${data.photo}`;
+        data.photo = `${process.env.AWS_S3_BASE_URL}/${data.photo}`;
       }
       return data;
     }
