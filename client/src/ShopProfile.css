@@ -1,3 +1,11 @@
+body{
+    padding-top: 5rem;
+    font-family: 'Merriweather', serif;
+}
+/*Shop title*/
+.shop-title{
+    margin: 40px 0 20px 0;
+}
 
 /*shoutout, given shoutouts, and share buttons*/
 .yellow-button{
@@ -37,5 +45,11 @@
 .shop-hours:hover{
     background-color: white;
     border-color: #ffda6a;
+    color: black;
+}
+
+/*card color*/
+.yellow-theme{
+    background-color: rgba(255, 230, 156, 0.75);
     color: black;
 }

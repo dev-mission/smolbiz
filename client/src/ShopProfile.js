@@ -4,10 +4,10 @@ function ShopProfile() {
     return (
         <main className="container">
             <div class="row">
-                <img src="https://via.placeholder.com/970x250" class="img-fluid" alt="Responsive image" />
+                <img src="https://images.squarespace-cdn.com/content/v1/5c50204971069939a1e30762/1548758243121-L4H9IIJPCANJI1VI9RTQ/ke17ZwdGBToddI8pDm48kFNOXROY8mYfoZwK4YIxwqsUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcT9d2YSbkvofiyQHn6rwFTFRIFUHroKGsYzBcIFlCGoy0xivptjT2QWQy1Udgpb9x/garden-centre.jpg?format=2500w" class="img-fluid" alt="Responsive image" />
             </div>
             <div class="row">
-                <h1>Oasis Garden Supply</h1>
+                <h1 className="shop-title">Oasis Garden Supply</h1>
             </div>
             <div class="row">
                 {/*This is for the left column */}
@@ -69,21 +69,166 @@ function ShopProfile() {
                                     <div class="col-9">
                                         <h5 class="card-title">Shop Owner: Lily Robinson</h5>
                                         <h6 class="card-subtitle mb-2">Bio:</h6>
-                                        <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                                         <h6 class="card-subtitle mb-2">Why did you start Oasis Garden Supply?</h6>
-                                        <p class="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     {/* Popular Items */}
-                    
+                    <div className="row m-2">
+                        <div className="col d-flex justify-content-center m-2">
+                            <h3 className="p-3 subtitle">Popular Items</h3>
+                        </div>
+                    </div>
+                    <div className="row justify-content-center">
+                        <div className="col-3" >
+                            <div class="card yellow-theme" style={{ "width": "18rem;" }}>
+                                <img src="https://via.placeholder.com/100x75" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-3" >
+                            <div class="card yellow-theme" style={{ "width": "18rem;" }}>
+                                <img src="https://via.placeholder.com/100x75" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-3" >
+                            <div class="card yellow-theme" style={{ "width": "18rem;" }}>
+                                <img src="https://via.placeholder.com/100x75" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-3" >
+                            <div class="card yellow-theme" style={{ "width": "18rem;" }}>
+                                <img src="https://via.placeholder.com/100x75" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Customer Photos */}
+                    <div className="row m-2">
+                        <div className="col d-flex justify-content-center m-2">
+                            <h3 className="p-3 subtitle">Customer Photos</h3>
+                        </div>
+                    </div>
+                    <div className="row justify-content-center">
+                        <div className="col-3" >
+                            <div class="card yellow-theme" style={{ "width": "18rem;" }}>
+                                <img src="https://via.placeholder.com/100x75" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <p class="card-text"> Photo 1</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-3" >
+                            <div class="card yellow-theme" style={{ "width": "18rem;" }}>
+                                <img src="https://via.placeholder.com/100x75" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <p class="card-text">Photo 2.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-3" >
+                            <div class="card yellow-theme" style={{ "width": "18rem;" }}>
+                                <img src="https://via.placeholder.com/100x75" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <p class="card-text">Photo 3.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-3" >
+                            <div class="card yellow-theme" style={{ "width": "18rem;" }}>
+                                <img src="https://via.placeholder.com/100x75" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <p class="card-text">Photo 4.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Shoutouts */}
+                    <div className="row m-2">
+                        <div className="col d-flex justify-content-center m-2">
+                            <h3 className="p-3 subtitle">Customer Shoutouts</h3>
+                        </div>
+                    </div>
+                    <div className="row">
+                        {/*search bar JUSTIFY CENTER*/}
+                        <form class="col-12" >
+                            <div class="row m-2">
+                                <div className="offset-2 col-6 p-3">
+                                    <input class="form-control input-main-search" type="search" placeholder="Search shoutouts" aria-label="Search" />
+                                </div>
+                                <div className="col-3 p-3">
+                                    <button class="btn btn-outline-success btn-main-search" type="submit">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="row">
+                        <div className="card mb-3 yellow-theme" style={{ "max-width": "540px;" }}>
+                            <div className="row g-0">
+                                <div className="col-md-4">
+                                    <img src="https://via.placeholder.com/250x250" alt="..." />
+                                </div>
+                                <div class="col-md-8">
+                                    <div className="card-body">
+                                        <h5 className="card-title">Name: @username <br />Location: <br /> Date: 1/1/21 <br /> # of users found this helpful</h5>
+                                        <p className="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+                                        <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="card mb-3 yellow-theme" style={{ "max-width": "540px;" }}>
+                            <div className="row g-0">
+                                <div className="col-md-4">
+                                    <img src="https://via.placeholder.com/250x250" alt="..." />
+                                </div>
+                                <div class="col-md-8">
+                                    <div className="card-body">
+                                        <h5 className="card-title">Name: @username <br />Location: <br /> Date: 1/1/21 <br /> # of users found this helpful</h5>
+                                        <p className="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+                                        <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="card mb-3 yellow-theme" style={{ "max-width": "540px;" }}>
+                            <div className="row g-0">
+                                <div className="col-md-4">
+                                    <img src="https://via.placeholder.com/250x250" alt="..." />
+                                </div>
+                                <div class="col-md-8">
+                                    <div className="card-body">
+                                        <h5 className="card-title">Name: @username <br />Location: <br /> Date: 1/1/21 <br /> # of users found this helpful</h5>
+                                        <p className="card-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+                                        <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 {/*This is for the right column */}
-                <div class="col offset-1">
+                <div class="col-md offset-1">
                     <div class="row d-flex justify-content-center">
-                        <div class="col-1 offset-2">
+                        <div class="col-md-1 offset-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gender-female" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M8 1a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3 5a5 5 0 1 1 5.5 4.975V12h2a.5.5 0 0 1 0 1h-2v2.5a.5.5 0 0 1-1 0V13h-2a.5.5 0 0 1 0-1h2V9.975A5 5 0 0 1 3 5z" />
                             </svg>
@@ -94,26 +239,26 @@ function ShopProfile() {
                     </div>
 
                     <div class="row d-flex justify-content-center">
-                        <div class="col-1 offset-2">
+                        <div class="col-md-1 offset-2">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rainbow" viewBox="0 0 16 16">
                                 <path d="M8 4.5a7 7 0 0 0-7 7 .5.5 0 0 1-1 0 8 8 0 1 1 16 0 .5.5 0 0 1-1 0 7 7 0 0 0-7-7zm0 2a5 5 0 0 0-5 5 .5.5 0 0 1-1 0 6 6 0 1 1 12 0 .5.5 0 0 1-1 0 5 5 0 0 0-5-5zm0 2a3 3 0 0 0-3 3 .5.5 0 0 1-1 0 4 4 0 1 1 8 0 .5.5 0 0 1-1 0 3 3 0 0 0-3-3zm0 2a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 4 0 .5.5 0 0 1-1 0 1 1 0 0 0-1-1z" />
                             </svg>
                         </div>
 
-                        <div class="col">
+                        <div class="col-md">
                             <p>LGBTQ Owned</p>
                         </div>
                     </div>
 
                     <div class="row d-flex justify-content-center">
-                        <div class="col-1 offset-2">
+                        <div class="col-md-1 offset-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                                 <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z" />
                             </svg>
                         </div>
-                        <div class="col">
+                        <div class="col-md">
                             <p>POC Owned</p>
                         </div>
                     </div>
